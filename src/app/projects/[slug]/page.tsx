@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { MDXRemote } from "next-mdx-remote/rsc"
-import { ArrowLeft, Target, Settings, GitBranch, Terminal } from "lucide-react"
+import { ArrowLeft, Target, Settings, GitBranch, Terminal, ExternalLink } from "lucide-react"
 
 import { getProjectBySlug, getProjectSlugs } from "@/lib/projects"
 import { Button } from "@/components/ui/button"
@@ -88,9 +88,18 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
                             ))}
                         </div>
 
-                        <div className="flex items-center text-sm font-medium border-t pt-6 w-full mt-4">
-                            <span className="text-muted-foreground mr-2">Role:</span>
-                            <span>{project.meta.role}</span>
+                        <div className="flex flex-wrap items-center justify-between text-sm font-medium border-t pt-6 w-full mt-4 gap-4">
+                            <div className="flex items-center">
+                                <span className="text-muted-foreground mr-2">Role:</span>
+                                <span>{project.meta.role}</span>
+                            </div>
+                            {project.meta.link && (
+                                <Button asChild variant="outline" size="sm" className="hover:bg-primary hover:text-primary-foreground border-primary/20">
+                                    <a href={project.meta.link} target="_blank" rel="noreferrer" className="flex items-center gap-2">
+                                        <ExternalLink className="h-4 w-4" /> Live Project
+                                    </a>
+                                </Button>
+                            )}
                         </div>
                     </div>
                 </header>

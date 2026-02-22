@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Briefcase, ArrowRight } from "lucide-react"
+import { Briefcase, ArrowRight, ExternalLink } from "lucide-react"
 import { getAllProjects } from "@/lib/projects"
 import { Card, CardDescription, CardHeader, CardTitle, CardFooter, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -52,12 +52,19 @@ export default function ProjectsIndex() {
                                         ))}
                                     </div>
                                 </CardContent>
-                                <CardFooter className="pt-0">
-                                    <Button asChild variant="default" className="w-full bg-card hover:bg-chart-4 hover:text-white border text-foreground transition-all">
+                                <CardFooter className="pt-0 flex gap-2">
+                                    <Button asChild variant="default" className="flex-1 bg-card hover:bg-chart-4 hover:text-white border text-foreground transition-all">
                                         <Link href={`/projects/${project.slug}`}>
-                                            Read Case Study <ArrowRight className="ml-2 h-4 w-4" />
+                                            Case Study <ArrowRight className="ml-2 h-4 w-4" />
                                         </Link>
                                     </Button>
+                                    {project.meta.link && (
+                                        <Button asChild variant="outline" className="px-3 hover:bg-primary hover:text-primary-foreground border-primary/20">
+                                            <a href={project.meta.link} target="_blank" rel="noreferrer" aria-label={`Visit live site for ${project.meta.title}`}>
+                                                <ExternalLink className="h-4 w-4" />
+                                            </a>
+                                        </Button>
+                                    )}
                                 </CardFooter>
                             </Card>
                         </HoverCard>
