@@ -162,16 +162,16 @@ export default function AboutPage() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="flex flex-col gap-12">
                     {skillsGroups.map((group, i) => (
-                        <div key={group.category} className="p-6 rounded-2xl bg-card border shadow-sm">
-                            <h3 className="text-lg font-semibold mb-6 border-b pb-2">{group.category}</h3>
-                            <StaggerContainer delay={i * 0.1} className="grid grid-cols-3 gap-3">
+                        <div key={group.category} className="max-w-4xl mx-auto w-full">
+                            <h3 className="text-xl font-semibold mb-6 text-center md:text-left text-foreground/90">{group.category}</h3>
+                            <StaggerContainer delay={i * 0.1} className="flex flex-wrap justify-center md:justify-start gap-4">
                                 {group.skills.map(skill => (
                                     <StaggerItem key={skill.name}>
-                                        <HoverCard className="flex flex-col items-center justify-center p-3 rounded-[40px] bg-muted/30 hover:bg-muted/60 transition-colors gap-2 border border-transparent hover:border-border/50 h-full min-h-[100px]">
-                                            <div className="scale-75 mb-1">{skill.icon}</div>
-                                            <span className="text-[10px] md:text-xs font-medium text-center leading-tight">{skill.name}</span>
+                                        <HoverCard className="flex items-center gap-3 px-5 py-3 rounded-full bg-card/60 hover:bg-muted/80 backdrop-blur-sm transition-all shadow-sm border border-border/40 hover:border-chart-4/50">
+                                            <div className="flex-shrink-0">{skill.icon}</div>
+                                            <span className="text-sm font-medium whitespace-nowrap">{skill.name}</span>
                                         </HoverCard>
                                     </StaggerItem>
                                 ))}
