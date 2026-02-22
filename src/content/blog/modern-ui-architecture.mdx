@@ -1,0 +1,29 @@
+---
+title: "Modern UI Architecture with Tailwind v4"
+date: "2026-02-22"
+description: "Exploring the new theming capabilities and performance improvements in Tailwind CSS v4."
+tags: ["CSS", "Tailwind", "Architecture"]
+---
+
+# Redefining the Standard
+
+Tailwind CSS v4 introduces a revolutionary change in how we structure design variables. Let's delve into what changed and why it matters.
+
+## The Power of Native CSS Variables
+
+Gone are the days of parsing giant \`tailwind.config.ts\` objects. Now we simply define styles using the new \`@theme\` directive right in our CSS payload.
+
+```css
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: var(--primary);
+  /* Look at how easy that is! */
+}
+```
+
+This brings extreme flexibility to design systems, especially around arbitrary values, runtime overrides, and component-based architectures.
+
+### Conclusion
+
+Always be ready for the future. As an engineer, you don't just write code, you orchestrate systems. Tailwind v4 brings us one step closer to harmony between pure CSS architectures and atomic styling.

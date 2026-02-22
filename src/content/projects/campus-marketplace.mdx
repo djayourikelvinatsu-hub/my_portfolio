@@ -1,0 +1,29 @@
+---
+title: "Campus Marketplace (Upcoming)"
+date: "2026-08-15"
+description: "An upcoming mobile-first web app designed to help university students buy, sell, and trade textbooks and electronics locally."
+role: "Fullstack Developer"
+stacks: ["Next.js", "Supabase", "Prisma", "Tailwind CSS"]
+---
+
+> [!TIP]
+> This project is currently in the brainstorming and wireframing phase!
+
+## Concept
+
+Created to simplify peer-to-peer campus commerce specifically for students at Accra Technical University. Textbooks are expensive, and this app aims to provide a safe, localized alternative to standard untrustworthy online marketplaces.
+
+## Planned Features
+
+- **Authentication via University Email**: Restricting access to verify student status locally via OAuth constraints.
+- **Location-based Search**: Highlighting proximity markers for safe meetups on campus.
+- **Real-time Chat**: Integrated messaging using Supabase realtime subscriptions.
+
+## Database Strategy 
+
+```mermaid
+graph TD
+    User -.->|Local Auth| Supabase
+    User -.->|Browses Market| NextJS
+    NextJS --> Prisma --> Postgres[PostgreSQL Database]
+```
