@@ -90,9 +90,12 @@ export default function AboutPage() {
                 transition={{ duration: 0.5 }}
                 className="mb-16"
             >
-                <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-                    My Journey
+                <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2">
+                    Kelvin Atsu Djayouri
                 </h1>
+                <h2 className="text-xl md:text-2xl text-primary font-mono mb-6">
+                    Frontend Developer
+                </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
                     A timeline of my professional experience, education, and continuous learning path.
                     I believe growth happens at the edge of your comfort zone.
