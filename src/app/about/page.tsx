@@ -96,10 +96,17 @@ export default function AboutPage() {
                 <h2 className="text-xl md:text-2xl text-primary font-mono mb-6">
                     Frontend Developer
                 </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                    A timeline of my professional experience, education, and continuous learning path.
-                    I believe growth happens at the edge of your comfort zone.
-                </p>
+                <div className="space-y-4 text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                    <p>
+                        I'm a frontend development student with a passion for pixel-perfect design and smooth user experiences.
+                    </p>
+                    <p>
+                        My journey into code started when I realized I could build the apps I dreamed of. Since then, I've been immersed in learning the ins and outs of HTML, CSS, and JavaScript.
+                    </p>
+                    <p>
+                        While I'm currently studying, I don't wait for the classroom to teach me—I build. I love taking designs from Figma and turning them into live, responsive websites. I’m currently exploring advanced React patterns and Next.js, and looking for opportunities to apply my skills to real-world projects.
+                    </p>
+                </div>
             </motion.div>
 
             <div className="relative border-l border-border/60 ml-3 md:ml-6 space-y-12 pb-12">
