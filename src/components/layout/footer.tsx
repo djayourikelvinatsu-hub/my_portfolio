@@ -7,7 +7,7 @@ export function Footer() {
         <footer className="border-t bg-background/50 backdrop-blur-sm">
             <div className="container mx-auto px-4 md:px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
                 <div className="flex flex-col items-center md:items-start">
-                    <p className="text-sm font-semibold tracking-tight">Kad_Dev © {new Date().getFullYear()}</p>
+                    <p className="text-sm font-semibold tracking-tight">KELVIN ATSU DJAYOURI © {new Date().getFullYear()}</p>
                     <p className="text-xs text-muted-foreground mb-4 mt-1">Built with Next.js, Tailwind, & Framer Motion</p>
                     <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6 text-sm font-medium mt-2">
                         <a href="mailto:kelvinatsu213@gmail.com" className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300">

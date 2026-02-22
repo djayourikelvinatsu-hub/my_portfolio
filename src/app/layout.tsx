@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kad | Frontend Developer",
-  description: "Enhanced interactive frontend developer portfolio.",
+  title: "Kelvin Atsu Djayouri | Frontend Developer",
+  description: "Personal portfolio of Kelvin Atsu Djayouri, a frontend developer specializing in React, Next.js, and modern UI architecture.",
 };
 
 export default function RootLayout({
