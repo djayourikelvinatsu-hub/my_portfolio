@@ -166,12 +166,12 @@ export default function AboutPage() {
                     {skillsGroups.map((group, i) => (
                         <div key={group.category} className="p-6 rounded-2xl bg-card border shadow-sm">
                             <h3 className="text-lg font-semibold mb-6 border-b pb-2">{group.category}</h3>
-                            <StaggerContainer delay={i * 0.1} className="grid grid-cols-2 gap-4">
+                            <StaggerContainer delay={i * 0.1} className="grid grid-cols-3 gap-3">
                                 {group.skills.map(skill => (
                                     <StaggerItem key={skill.name}>
-                                        <HoverCard className="flex flex-col items-center justify-center p-4 rounded-xl bg-muted/30 hover:bg-muted/60 transition-colors gap-3 border border-transparent hover:border-border/50 h-full">
-                                            {skill.icon}
-                                            <span className="text-xs font-medium text-center">{skill.name}</span>
+                                        <HoverCard className="flex flex-col items-center justify-center p-3 rounded-[40px] bg-muted/30 hover:bg-muted/60 transition-colors gap-2 border border-transparent hover:border-border/50 h-full min-h-[100px]">
+                                            <div className="scale-75 mb-1">{skill.icon}</div>
+                                            <span className="text-[10px] md:text-xs font-medium text-center leading-tight">{skill.name}</span>
                                         </HoverCard>
                                     </StaggerItem>
                                 ))}
