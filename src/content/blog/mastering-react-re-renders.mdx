@@ -1,0 +1,50 @@
+---
+title: "Mastering React Re-renders"
+date: "2026-02-15"
+description: "A deep dive into why React components render and how to optimize performance in complex applications."
+tags: ["React", "Performance", "JavaScript"]
+---
+
+# The Anatomy of a Re-render
+
+React's declarative nature is powerful, but it can sometimes hide the performance costs of frequent updates. Understanding why and when a component re-renders is the first step toward optimization.
+
+## State Changes and Context
+
+The most common causes for a React render are:
+1. **Local State Changes**: Calling `setState` (or a dispatch function from `useReducer`).
+2. **Context Value Changes**: Any component consuming a Context via `useContext` will re-render when the context provider's value changes.
+3. **Parent Re-renders**: By default, if a parent component renders, all its children will render, regardless of whether their props changed.
+
+## Memoization Techniques
+
+To break the chain of unnecessary renders, React offers several tools:
+
+### React.memo
+Wrapping a functional component in `React.memo` tells React to only re-render the component if its props have changed. 
+
+```jsx
+const ExpensiveComponent = React.memo(({ data }) => {
+  // Heavy computation here
+  return <div>{data.label}</div>;
+});
+```
+
+### useMemo and useCallback
+When passing objects or functions as props, their reference changes on every render of the parent. `useMemo` and `useCallback` preserve these references across renders, enabling `React.memo` to work effectively.
+
+```jsx
+const Parent = () => {
+  const [count, setCount] = useState(0);
+
+  // Reference is preserved across renders
+  const handleClick = useCallback(() => {
+    console.log("Clicked!");
+  }, []);
+
+  return <Child onClick={handleClick} />;
+};
+```
+
+### Conclusion
+Don't reach for memoization right away. Measure performance first using React DevTools Profiler, and optimize where you actually observe bottlenecks.

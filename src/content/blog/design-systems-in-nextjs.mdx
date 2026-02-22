@@ -1,0 +1,44 @@
+---
+title: "Design Systems in Next.js"
+date: "2025-12-10"
+description: "Strategies for building scalable and maintainable design systems within the Next.js App Router."
+tags: ["Next.js", "Design Systems", "Tailwind"]
+---
+
+# Building for Scale
+
+As your Next.js application grows, maintaining visual consistency becomes increasingly difficult. A well-structured design system is essential for keeping both the UI coherent and the codebase manageable.
+
+## The Shadcn UI Paradigm
+
+The traditional approach to component libraries involved installing a massive NPM package and overriding styles. The modern approach, popularized by tools like Shadcn UI, is fundamentally different.
+
+Instead of a black-box dependency, you copy and paste the component code directly into your project. This gives you absolute control over the markup and styles, while still benefiting from a high-quality, accessible foundation.
+
+## Leveraging Tailwind CSS
+
+Tailwind is the perfect engine for a design system. By defining your brand colors, typography, and spacing in the `tailwind.config.ts`, you create a set of design tokens that are automatically available as utility classes throughout your application.
+
+```typescript
+// tailwind.config.ts snippet
+theme: {
+  extend: {
+    colors: {
+      primary: {
+        DEFAULT: "hsl(var(--primary))",
+        foreground: "hsl(var(--primary-foreground))",
+      },
+      // ...
+    }
+  }
+}
+```
+
+## Server Components vs Client Components
+
+When building your design system in the Next.js App Router, you must carefully consider the boundary between Server and Client Components.
+
+- **Server Components (Default):** Use these for layout, typography, and static UI elements. They reduce the JavaScript bundle size.
+- **Client Components (`'use client'`):** Reserve these for interactive components like dropdowns, modals, and anything that requires React state or event listeners.
+
+By isolating interactivity to the leaves of your component tree, you ensure that your design system remains performant and scalable.
