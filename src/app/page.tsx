@@ -2,6 +2,7 @@
 
 import { motion, Variants } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight, Code2, Layers, Zap, Mail, Phone } from "lucide-react"
 import { FaWhatsapp } from "react-icons/fa"
 
@@ -63,6 +64,16 @@ export default function Home() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-chart-3"></span>
             </span>
             Available for new opportunities
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-8 rounded-full overflow-hidden border-4 border-background shadow-xl">
+            <Image
+              src="/avatar.jpg"
+              alt="Kelvin Atsu Djayouri"
+              fill
+              className="object-cover"
+              priority
+            />
           </motion.div>
 
           <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 sm:mb-6 leading-[1.1]">

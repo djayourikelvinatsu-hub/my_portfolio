@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { Calendar, GraduationCap, Briefcase, Award } from "lucide-react"
 import {
     SiReact,
@@ -88,24 +89,39 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="mb-16"
+                className="mb-16 flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start"
             >
-                <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2">
-                    Kelvin Atsu Djayouri
-                </h1>
-                <h2 className="text-xl md:text-2xl text-primary font-mono mb-6">
-                    Frontend Developer
-                </h2>
-                <div className="space-y-4 text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                    <p>
-                        I'm a frontend development student with a passion for pixel-perfect design and smooth user experiences.
-                    </p>
-                    <p>
-                        My journey into code started when I realized I could build the apps I dreamed of. Since then, I've been immersed in learning the ins and outs of HTML, CSS, and JavaScript.
-                    </p>
-                    <p>
-                        While I'm currently studying, I don't wait for the classroom to teach me—I build. I love taking designs from Figma and turning them into live, responsive websites. I’m currently exploring advanced React patterns and Next.js, and looking for opportunities to apply my skills to real-world projects.
-                    </p>
+                <div className="flex-1 order-2 md:order-1">
+                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-center md:text-left">
+                        Kelvin Atsu Djayouri
+                    </h1>
+                    <h2 className="text-xl md:text-2xl text-primary font-mono mb-6 text-center md:text-left">
+                        Frontend Developer
+                    </h2>
+                    <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+                        <p>
+                            I'm a frontend development student with a passion for pixel-perfect design and smooth user experiences.
+                        </p>
+                        <p>
+                            My journey into code started when I realized I could build the apps I dreamed of. Since then, I've been immersed in learning the ins and outs of HTML, CSS, and JavaScript.
+                        </p>
+                        <p>
+                            While I'm currently studying, I don't wait for the classroom to teach me—I build. I love taking designs from Figma and turning them into live, responsive websites. I’m currently exploring advanced React patterns and Next.js, and looking for opportunities to apply my skills to real-world projects.
+                        </p>
+                    </div>
+                </div>
+
+                <div className="w-48 h-48 md:w-64 md:h-64 relative flex-shrink-0 order-1 md:order-2">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-chart-2/20 rounded-full blur-2xl" />
+                    <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-background shadow-2xl">
+                        <Image
+                            src="/avatar.jpg"
+                            alt="Kelvin Atsu Djayouri"
+                            fill
+                            className="object-cover object-top"
+                            priority
+                        />
+                    </div>
                 </div>
             </motion.div>
 
