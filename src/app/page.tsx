@@ -76,12 +76,15 @@ export default function Home() {
             />
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 sm:mb-6 leading-[1.1]">
-            Architecting Interactive <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-chart-2 to-chart-4">
-              Digital Experiences
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 sm:mb-6 leading-[1.1]">
+            <motion.span variants={itemVariants} className="inline-block mr-[0.25em]">Architecting</motion.span>
+            <motion.span variants={itemVariants} className="inline-block">Interactive</motion.span>
+            <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-chart-2 to-chart-4 pb-2">
+              <motion.span variants={itemVariants} className="inline-block mr-[0.25em]">Digital</motion.span>
+              <motion.span variants={itemVariants} className="inline-block">Experiences</motion.span>
             </span>
-          </motion.h1>
+          </h1>
 
           <motion.p variants={itemVariants} className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
             Frontend Developer and Student at Accra Technical University.
