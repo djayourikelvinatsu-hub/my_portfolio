@@ -82,7 +82,8 @@ export default function Home() {
           </motion.div>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 sm:mb-6 leading-[1.1] overflow-hidden">
-            <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">Student</motion.span>
+            <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">IT</motion.span>
+            <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">student</motion.span>
             <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">by</motion.span>
             <motion.span variants={wordVariants} className="inline-block">day,</motion.span>
             <br className="hidden md:block" />
@@ -95,7 +96,7 @@ export default function Home() {
           </h1>
 
           <motion.p variants={itemVariants} className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
-            At Accra Technical University, I&apos;m learning the rules then breaking them to build premium, high-performance web applications with modern technologies. I believe great code doesn&apos;t just function it feels something. Every project I touch is a chance to turn complex problems into seamless digital moments. Scroll down to see what I&apos;m building and maybe let&apos;s build something together.
+            At Accra Technical University, I&apos;m learning how technology really works—then using that knowledge to build premium, high-performance web applications with modern tools. IT taught me to see the full picture—not just the interface, but the systems, networks, and data behind it. That&apos;s why my frontend isn&apos;t just pretty; it&apos;s built to last. Scroll down to see what I&apos;m building.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
