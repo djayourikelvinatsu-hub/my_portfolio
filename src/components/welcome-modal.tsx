@@ -9,11 +9,32 @@ import { motion } from "framer-motion"
 export function WelcomeModal() {
     const [isOpen, setIsOpen] = React.useState(false)
     const [mounted, setMounted] = React.useState(false)
+    const [greeting, setGreeting] = React.useState("Welcome to my Portfolio!")
+    const [message, setMessage] = React.useState("I'm thrilled you're here. This site is more than just a resume—it's a living sandbox.")
 
     React.useEffect(() => {
         setMounted(true)
-        // Check if the user has visited before
-        const hasVisited = localStorage.getItem("hasVisitedPortfolio")
+
+        const hour = new Date().getHours()
+        let timeGreeting = "Welcome to my Portfolio!"
+        let specificMessage = "I'm thrilled you're here. This site is more than just a resume—it's a living sandbox. Feel free to explore my interactive code playground, deep-dive case studies, and performance dashboards!"
+
+        if (hour < 12) {
+            timeGreeting = "Good Morning! 🌅"
+            specificMessage = "Grab a coffee and take a look around. This site is more than just a resume—it's a living sandbox. Feel free to explore my interactive code playground, deep-dive case studies, and performance dashboards!"
+        } else if (hour < 18) {
+            timeGreeting = "Good Afternoon! ☀️"
+            specificMessage = "Hope you're having a great day. This site is more than just a resume—it's a living sandbox. Feel free to explore my interactive code playground, deep-dive case studies, and performance dashboards!"
+        } else {
+            timeGreeting = "Good Evening! 🌙"
+            specificMessage = "Thanks for stopping by tonight. This site is more than just a resume—it's a living sandbox. Feel free to explore my interactive code playground, deep-dive case studies, and performance dashboards!"
+        }
+
+        setGreeting(timeGreeting)
+        setMessage(specificMessage)
+
+        // Check if the user has visited before in this session
+        const hasVisited = sessionStorage.getItem("hasVisitedPortfolio")
         if (!hasVisited) {
             // Add a small delay so it doesn't pop up instantly on page load
             const timer = setTimeout(() => {
@@ -25,7 +46,7 @@ export function WelcomeModal() {
 
     const handleClose = () => {
         setIsOpen(false)
-        localStorage.setItem("hasVisitedPortfolio", "true")
+        sessionStorage.setItem("hasVisitedPortfolio", "true")
     }
 
     // Prevent hydration mismatch
@@ -50,12 +71,11 @@ export function WelcomeModal() {
                 </motion.div>
 
                 <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
-                    Welcome to my Portfolio!
+                    {greeting}
                 </h2>
 
                 <p className="text-muted-foreground mb-8 text-sm sm:text-base leading-relaxed px-2">
-                    I'm thrilled you're here. This site is more than just a resume—it's a living sandbox.
-                    Feel free to explore my interactive code playground, deep-dive case studies, and performance dashboards!
+                    {message}
                 </p>
 
                 <Button
