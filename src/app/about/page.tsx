@@ -100,13 +100,16 @@ export default function AboutPage() {
                     </h2>
                     <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                         <p>
-                            I'm a frontend development student with a passion for pixel-perfect design and smooth user experiences.
+                            Frontend development student with a passion for pixel-perfect design and smooth user experiences. 🎨
                         </p>
                         <p>
-                            My journey into code started when I realized I could build the apps I dreamed of. Since then, I've been immersed in learning the ins and outs of HTML, CSS, and JavaScript.
+                            My journey into code started when I realized I could build the apps I dreamed of. Since then, I&apos;ve been immersed in learning the ins and outs of HTML, CSS, and JavaScript—and I&apos;m not waiting for the classroom to teach me. I build. 💻
                         </p>
                         <p>
-                            While I'm currently studying, I don't wait for the classroom to teach me—I build. I love taking designs from Figma and turning them into live, responsive websites. I’m currently exploring advanced React patterns and Next.js, and looking for opportunities to apply my skills to real-world projects.
+                            I love taking designs from Figma and turning them into live, responsive websites. Currently exploring advanced React patterns and Next.js while looking for opportunities to apply my skills to real-world projects. 🚀
+                        </p>
+                        <p>
+                            Open to collabs, feedback, and connecting with fellow devs! Let&apos;s create something amazing together. ✨
                         </p>
                     </div>
                 </div>
