@@ -96,7 +96,7 @@ export default function Home() {
           </h1>
 
           <motion.p variants={itemVariants} className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
-            At Accra Technical University, I&apos;m learning how technology really works—then using that knowledge to build premium, high-performance web applications with modern tools. IT taught me to see the full picture—not just the interface, but the systems, networks, and data behind it. That&apos;s why my frontend isn&apos;t just pretty; it&apos;s built to last. Scroll down to see what I&apos;m building.
+            At Accra Technical University, I&apos;m learning how technology really works then using that knowledge to build premium, high-performance web applications with modern tools. IT taught me to see the full picture not just the interface, but the systems, networks, and data behind it. That&apos;s why my frontend isn&apos;t just pretty; it&apos;s built to last. Scroll down to see what I&apos;m building.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
