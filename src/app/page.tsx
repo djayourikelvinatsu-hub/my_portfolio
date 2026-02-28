@@ -24,6 +24,11 @@ const itemVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 10 } }
 }
 
+const wordVariants: Variants = {
+  hidden: { opacity: 0, x: -40 },
+  visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 120, damping: 12 } }
+}
+
 export default function Home() {
   return (
     <div className="relative flex flex-col items-center flex-1 w-full overflow-hidden">
@@ -76,13 +81,13 @@ export default function Home() {
             />
           </motion.div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 sm:mb-6 leading-[1.1]">
-            <motion.span variants={itemVariants} className="inline-block mr-[0.25em]">Architecting</motion.span>
-            <motion.span variants={itemVariants} className="inline-block">Interactive</motion.span>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 sm:mb-6 leading-[1.1] overflow-hidden">
+            <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">Architecting</motion.span>
+            <motion.span variants={wordVariants} className="inline-block">Interactive</motion.span>
             <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-chart-2 to-chart-4 pb-2">
-              <motion.span variants={itemVariants} className="inline-block mr-[0.25em]">Digital</motion.span>
-              <motion.span variants={itemVariants} className="inline-block">Experiences</motion.span>
+              <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">Digital</motion.span>
+              <motion.span variants={wordVariants} className="inline-block">Experiences</motion.span>
             </span>
           </h1>
 
