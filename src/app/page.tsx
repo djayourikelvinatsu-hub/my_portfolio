@@ -82,16 +82,12 @@ export default function Home() {
           </motion.div>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 sm:mb-6 leading-[1.1] overflow-hidden">
-            <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">IT</motion.span>
-            <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">student</motion.span>
-            <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">by</motion.span>
-            <motion.span variants={wordVariants} className="inline-block">day,</motion.span>
+            <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">Building</motion.span>
+            <motion.span variants={wordVariants} className="inline-block">Interfaces.</motion.span>
             <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-chart-2 to-chart-4 pb-2">
-              <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">frontend</motion.span>
-              <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">architect</motion.span>
-              <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">by</motion.span>
-              <motion.span variants={wordVariants} className="inline-block">night.</motion.span>
+              <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">Architecting</motion.span>
+              <motion.span variants={wordVariants} className="inline-block">Systems.</motion.span>
             </span>
           </h1>
 
