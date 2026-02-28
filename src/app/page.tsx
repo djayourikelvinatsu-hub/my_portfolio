@@ -82,18 +82,20 @@ export default function Home() {
           </motion.div>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 sm:mb-6 leading-[1.1] overflow-hidden">
-            <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">Architecting</motion.span>
-            <motion.span variants={wordVariants} className="inline-block">Interactive</motion.span>
+            <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">Student</motion.span>
+            <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">by</motion.span>
+            <motion.span variants={wordVariants} className="inline-block">day,</motion.span>
             <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-chart-2 to-chart-4 pb-2">
-              <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">Digital</motion.span>
-              <motion.span variants={wordVariants} className="inline-block">Experiences</motion.span>
+              <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">frontend</motion.span>
+              <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">architect</motion.span>
+              <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">by</motion.span>
+              <motion.span variants={wordVariants} className="inline-block">night.</motion.span>
             </span>
           </h1>
 
           <motion.p variants={itemVariants} className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
-            Frontend Developer and Student at Accra Technical University.
-            I specialize in building premium, high-performance web applications using modern web technologies.
+            At Accra Technical University, I&apos;m learning the rules—then breaking them to build premium, high-performance web applications with modern technologies. I believe great code doesn&apos;t just function—it feels something. Every project I touch is a chance to turn complex problems into seamless digital moments. Scroll down to see what I&apos;m building—and maybe let&apos;s build something together.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
