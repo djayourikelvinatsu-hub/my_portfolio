@@ -7,29 +7,6 @@ stacks: ["Next.js 16", "TypeScript", "Tailwind v4", "Framer Motion", "MDX"]
 link: "https://my-portfolio-uj4y.vercel.app/"
 ---
 
-## Project Overview
+## Overview
 
-This is the very portfolio you are currently looking at! It was built from the ground up using modern web technologies to serve not just as a static resume, but as a living sandbox and a demonstration of interactive frontend architecture.
-
-## Key Features
-
-- **Live Code Editor**: Embedded interactive code challenges using Monaco Editor (`/playground`), allowing visitors to live-edit React components.
-- **Performance Dashboards**: Visualizing Lighthouse and Core Web Vitals via Recharts (`/performance`).
-- **Dynamic Theming**: Seamless light/dark mode transitions built using pure CSS variables and `next-themes`.
-- **MDX Engine**: Custom `.mdx` rendering for dynamically generating blog posts and comprehensive case studies.
-
-## Architectural Strategy
-
-The website is served entirely via the new **Next.js App Router**, leveraging server components heavily for the MDX parsing layer, and gracefully handing off to client components specifically for animations and interactive graphs.
-
-```mermaid
-graph TD
-    Client[Browser] -->|Requests Route| Next[Next.js App Router]
-    Next -->|Applies Layout| Theme[Theme Provider]
-    Next -->|Parses Content| MDX[MDX Engine]
-    MDX -->|Server Site Generation| Client
-```
-
-## Accomplishments
-
-Building this portfolio allowed me to practice scaling a design system from scratch using **Tailwind CSS v4**'s new variable mechanics, while proving my proficiency in modern React patterns and dynamic routing.
+This portfolio was built with Next.js 16, Tailwind v4, and framer-motion. It acts as a living sandbox featuring a live code editor, an interactive MDX blog, and dynamic theming. It leverages Server Components for efficient MDX parsing and client components for interactive graphs, achieving a performant, modern frontend experience.

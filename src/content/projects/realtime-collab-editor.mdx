@@ -9,21 +9,4 @@ link: "https://devspace-collab-demo.vercel.app"
 
 ## Overview
 
-DevSpace is a web-based integrated development environment designed to make remote pair programming as seamless as sitting next to your teammate. It allows multiple developers to edit the same codebase simultaneously with nearly zero latency.
-
-## Core Features
-
-- **Real-Time Collaboration**: Powered by `Yjs` and WebSockets, changes are synced instantly across all connected clients.
-- **Live Presence**: View teammate cursors and active selections in real-time.
-- **Instant Previews**: Built-in browser bundler to render live previews of React code directly in the viewport.
-
-## Technical Implementation
-
-```mermaid
-graph TD
-    Client1[Developer A] <-->|WebSocket| Server[Node.js Sync Server]
-    Client2[Developer B] <-->|WebSocket| Server
-    Server <-->|Yjs CRDTs| Memory[In-Memory Document State]
-```
-
-By leveraging Conflict-free Replicated Data Types (CRDTs), the editor ensures that concurrent edits are merged deterministically without the need for a central conflict resolution authority.
+DevSpace is a collaborative IDE for pair programming powered by Yjs and WebSockets. It syncs state across connected clients via CRDTs, providing live cursors, realtime editing, and instant in-browser React previews with nearly zero latency.

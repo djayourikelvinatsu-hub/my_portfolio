@@ -7,24 +7,6 @@ stacks: ["Next.js", "Supabase", "Prisma", "Tailwind CSS"]
 link: "https://campus-marketplace-umber.vercel.app"
 ---
 
-> [!TIP]
-> This project is currently in the brainstorming and wireframing phase!
+## Overview
 
-## Concept
-
-Created to simplify peer-to-peer campus commerce specifically for students at Accra Technical University. Textbooks are expensive, and this app aims to provide a safe, localized alternative to standard untrustworthy online marketplaces.
-
-## Planned Features
-
-- **Authentication via University Email**: Restricting access to verify student status locally via OAuth constraints.
-- **Location-based Search**: Highlighting proximity markers for safe meetups on campus.
-- **Real-time Chat**: Integrated messaging using Supabase realtime subscriptions.
-
-## Database Strategy 
-
-```mermaid
-graph TD
-    User -.->|Local Auth| Supabase
-    User -.->|Browses Market| NextJS
-    NextJS --> Prisma --> Postgres[PostgreSQL Database]
-```
+A mobile-first marketplace for students at Accra Technical University to safely buy and sell goods. It features Next.js, a Supabase/Prisma/Postgres stack, location-based meetups, real-time chat, and authentication constrained to university emails for security.
