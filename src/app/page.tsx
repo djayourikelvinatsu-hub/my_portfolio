@@ -81,18 +81,18 @@ export default function Home() {
             />
           </motion.div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 sm:mb-6 leading-[1.1] overflow-hidden">
-            <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">Building</motion.span>
-            <motion.span variants={wordVariants} className="inline-block">Interfaces.</motion.span>
-            <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-chart-2 to-chart-4 pb-2">
-              <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">Architecting</motion.span>
-              <motion.span variants={wordVariants} className="inline-block">Systems.</motion.span>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 sm:mb-6 leading-[1.1]">
+            <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">Crafting</motion.span>
+            <motion.span variants={wordVariants} className="inline-block">Digital Experiences.</motion.span>
+            <br className="hidden lg:block" />
+            <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary via-chart-2 to-chart-4 pb-2 pt-2 lg:pt-0">
+              <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">Engineering</motion.span>
+              <motion.span variants={wordVariants} className="inline-block">Scalable Systems.</motion.span>
             </span>
           </h1>
 
           <motion.p variants={itemVariants} className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
-            At Accra Technical University, I&apos;m learning how technology really works then using that knowledge to build premium, high-performance web applications with modern tools. IT taught me to see the full picture not just the interface, but the systems, networks, and data behind it. That&apos;s why my frontend isn&apos;t just pretty; it&apos;s built to last. Scroll down to see what I&apos;m building.
+            As an IT student at Accra Technical University, I blend a deep understanding of foundational technology with modern development practices to engineer premium, high-performance web applications. By seeing the complete picture—from network requests and database architecture to seamless user interactions—I ensure my solutions are as robust under the hood as they are beautiful on the screen. Explore my work below.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
