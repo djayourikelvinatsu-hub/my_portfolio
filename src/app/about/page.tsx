@@ -60,9 +60,9 @@ const timelineData = [
         year: "Present",
         title: "Student",
         company: "Accra Technical University",
-        description: "Currently pursuing my studies while actively developing my skills in modern frontend web technologies, React, and Next.js.",
+        description: "I am currently learning for my degree in Information Technology, while actively developing my skills in modern frontend web technologies like React and Next.js.",
         icon: <GraduationCap className="h-5 w-5" />,
-        skills: ["Web Development", "React", "Next.js", "Computer Science"],
+        skills: ["Information Technology", "React", "Next.js", "Computer Science"],
     },
     {
         year: "2024",
@@ -100,7 +100,7 @@ export default function AboutPage() {
                     </h2>
                     <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                         <p>
-                            A frontend developer specializing in building intuitive, pixel-perfect interfaces and seamless user experiences.
+                            A frontend developer currently learning for a degree in Information Technology, specializing in building intuitive, pixel-perfect interfaces and seamless user experiences.
                         </p>
                         <p>
                             With a strong foundation in modern web technologies, my approach combines technical expertise with a keen eye for design. My development journey began with a desire to build high-quality applications from the ground up, and since then, I have been continuously expanding my skillset across the frontend ecosystem. I am driven by practical application—I learn by building.
