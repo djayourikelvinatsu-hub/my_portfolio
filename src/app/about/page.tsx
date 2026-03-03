@@ -100,16 +100,16 @@ export default function AboutPage() {
                     </h2>
                     <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                         <p>
-                            Information Technology student specializing in frontend development, with a passion for pixel-perfect design and smooth user experiences. 🎨
+                            A frontend developer specializing in building intuitive, pixel-perfect interfaces and seamless user experiences.
                         </p>
                         <p>
-                            Currently pursuing a degree in Information Technology, combining theoretical knowledge with hands-on coding practice. My journey into code started when I realized I could build the apps I dreamed of. Since then, I&apos;ve been immersed in learning the ins and outs of HTML, CSS, and JavaScript and I&apos;m not waiting for the classroom to teach me. I build. 💻
+                            With a strong foundation in modern web technologies, my approach combines technical expertise with a keen eye for design. My development journey began with a desire to build high-quality applications from the ground up, and since then, I have been continuously expanding my skillset across the frontend ecosystem. I am driven by practical application—I learn by building.
                         </p>
                         <p>
-                            I love taking designs from Figma and turning them into live, responsive websites. Currently exploring advanced React patterns and Next.js while looking for opportunities to apply my skills to real-world projects. 🚀
+                            I specialize in translating complex designs from Figma into responsive, performant websites. Currently, my focus is on leveraging advanced React patterns and Next.js to engineer scalable, real-world solutions.
                         </p>
                         <p>
-                            Open to collabs, feedback, and connecting with fellow devs! Let&apos;s create something amazing together. ✨
+                            I am open to collaborations, constructive feedback, and connecting with fellow developers. Let's build something exceptional together.
                         </p>
                     </div>
                 </div>
