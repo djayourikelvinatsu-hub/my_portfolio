@@ -9,6 +9,7 @@ import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { LocalTime } from "@/components/ui/local-time"
 
 const navItems = [
     { name: "Home", path: "/" },
@@ -61,23 +62,26 @@ export function Navbar() {
                         </Link>
                     ))}
 
-                    <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                        className="ml-2"
-                    >
-                        {mounted ? (
-                            theme === "dark" ? (
-                                <Sun className="h-4 w-4" />
+                    <div className="flex items-center gap-2 ml-2">
+                        <LocalTime />
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                            className="ml-2"
+                        >
+                            {mounted ? (
+                                theme === "dark" ? (
+                                    <Sun className="h-4 w-4" />
+                                ) : (
+                                    <Moon className="h-4 w-4" />
+                                )
                             ) : (
-                                <Moon className="h-4 w-4" />
-                            )
-                        ) : (
-                            <div className="h-4 w-4" />
-                        )}
-                        <span className="sr-only">Toggle theme</span>
-                    </Button>
+                                <div className="h-4 w-4" />
+                            )}
+                            <span className="sr-only">Toggle theme</span>
+                        </Button>
+                    </div>
                 </nav>
 
                 {/* Mobile menu button */}
