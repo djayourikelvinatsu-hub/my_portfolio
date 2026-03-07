@@ -108,7 +108,7 @@ export default function AboutPage() {
                     </h2>
                     <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                         <p>
-                            A Senior Frontend Engineer with proven experience in architecting scalable applications and leading frontend teams, specializing in building intuitive, pixel-perfect interfaces and seamless user experiences.
+                            A Senior Frontend Engineer with 5 years of experience in architecting scalable applications and leading frontend teams, specializing in building intuitive, pixel-perfect interfaces and seamless user experiences.
                         </p>
                         <p>
                             With a strong foundation in modern web technologies, my approach combines technical expertise with a keen eye for design. My development journey has involved building high-quality applications from the ground up and mentoring junior developers to establish best practices.

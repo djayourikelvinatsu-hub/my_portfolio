@@ -99,7 +99,7 @@ export default function Home() {
           </h1>
 
           <motion.p variants={itemVariants} className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
-            As a senior frontend engineer, I blend extensive architectural experience with a passion for creating premium, high-performance user experiences. By taking a holistic approach to development, from optimizing architecture and state management to crafting seamless, interactive interfaces, I ensure my solutions are robust, engaging, and scalable. Explore my work below.
+            As a senior frontend engineer with 5 years of experience, I blend extensive architectural experience with a passion for creating premium, high-performance user experiences. By taking a holistic approach to development, from optimizing architecture and state management to crafting seamless, interactive interfaces, I ensure my solutions are robust, engaging, and scalable. Explore my work below.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
