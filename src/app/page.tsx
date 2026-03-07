@@ -10,16 +10,6 @@ import { FaWhatsapp } from "react-icons/fa"
 import { Button } from "@/components/ui/button"
 import { Modal } from "@/components/ui/modal"
 
-const welcomeMessages = [
-  "Welcome! I'm Kelvin, a software engineer with a passion for scalable architecture. 🚀",
-  "Hello! Ready to explore some robust backend solutions and full-stack projects? 💻",
-  "Glad you're here! Let's dive into high-performance web development. ⚡",
-  "Welcome to my portfolio! I specialize in architecting reliable & engaging software. ✨",
-  "Hey there! Check out my work in database architecture and API design below. 🛠️",
-  "Greetings! From robust backends to seamless UIs, explore my full-stack journey. 🌟",
-  "Welcome! I build scalable software and craft premium user experiences. 🔥"
-]
-
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -45,11 +35,21 @@ export default function Home() {
   const [mounted, setMounted] = useState(false)
   const [welcomeMessage, setWelcomeMessage] = useState("")
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [visitorName, setVisitorName] = useState("")
+  const [step, setStep] = useState<"askName" | "welcome">("welcome")
+  const [inputName, setInputName] = useState("")
 
   useEffect(() => {
     setMounted(true)
-    const randomIndex = Math.floor(Math.random() * welcomeMessages.length)
-    setWelcomeMessage(welcomeMessages[randomIndex])
+
+    // Check local storage for name
+    const storedName = localStorage.getItem("visitorName")
+    if (storedName) {
+      setVisitorName(storedName)
+      setStep("welcome")
+    } else {
+      setStep("askName")
+    }
 
     // Add a slight delay before showing the modal for a better UX
     const timer = setTimeout(() => {
@@ -58,6 +58,36 @@ export default function Home() {
 
     return () => clearTimeout(timer)
   }, [])
+
+  useEffect(() => {
+    if (step === "welcome") {
+      const nameGreeting = visitorName ? ` ${visitorName}` : ""
+      const messages = [
+        `Welcome${nameGreeting}! I'm Kelvin, a software engineer with a passion for scalable architecture. 🚀`,
+        `Hello${nameGreeting}! Ready to explore some robust backend solutions and full-stack projects? 💻`,
+        `Glad you're here${nameGreeting}! Let's dive into high-performance web development. ⚡`,
+        `Welcome to my portfolio${nameGreeting}! I specialize in architecting reliable & engaging software. ✨`,
+        `Hey there${nameGreeting}! Check out my work in database architecture and API design below. 🛠️`,
+        `Greetings${nameGreeting}! From robust backends to seamless UIs, explore my full-stack journey. 🌟`,
+        `Welcome${nameGreeting}! I build scalable software and craft premium user experiences. 🔥`
+      ]
+
+      const randomIndex = Math.floor(Math.random() * messages.length)
+      setWelcomeMessage(messages[randomIndex])
+    }
+  }, [step, visitorName])
+
+  const handleNameSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (inputName.trim()) {
+      const name = inputName.trim()
+      localStorage.setItem("visitorName", name)
+      setVisitorName(name)
+      setStep("welcome")
+    } else {
+      setStep("welcome")
+    }
+  }
 
   return (
     <div className="relative flex flex-col items-center flex-1 w-full overflow-hidden">
@@ -224,37 +254,99 @@ export default function Home() {
             <span className="text-4xl leading-none block transform translate-y-[-2px]">👋</span>
           </motion.div>
 
-          <motion.h2
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-2xl sm:text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-chart-4"
-          >
-            Hello there!
-          </motion.h2>
+          {step === "askName" ? (
+            <form onSubmit={handleNameSubmit} className="w-full">
+              <motion.h2
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                className="text-2xl sm:text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-chart-4"
+              >
+                Welcome!
+              </motion.h2>
 
-          <motion.p
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="text-lg text-muted-foreground mb-8"
-          >
-            {welcomeMessage}
-          </motion.p>
+              <motion.p
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="text-lg text-muted-foreground mb-6"
+              >
+                What should I call you?
+              </motion.p>
 
-          <motion.div
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="w-full"
-          >
-            <Button
-              className="w-full rounded-full h-12 text-md shadow-lg hover:shadow-primary/20 transition-all hover:scale-[1.02]"
-              onClick={() => setIsModalOpen(false)}
-            >
-              Continue to Site
-            </Button>
-          </motion.div>
+              <motion.div
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="w-full mb-6"
+              >
+                <input
+                  type="text"
+                  value={inputName}
+                  onChange={(e) => setInputName(e.target.value)}
+                  placeholder="Enter your name"
+                  className="w-full p-3 rounded-xl border border-border bg-background/50 focus:outline-none focus:ring-2 focus:ring-primary/50 text-center text-lg text-foreground"
+                  autoFocus
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="w-full flex gap-3"
+              >
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="flex-1 rounded-full h-12 text-md transition-all hover:bg-muted"
+                  onClick={() => setStep("welcome")}
+                >
+                  Skip
+                </Button>
+                <Button
+                  type="submit"
+                  className="flex-1 rounded-full h-12 text-md shadow-lg hover:shadow-primary/20 transition-all hover:scale-[1.02]"
+                >
+                  Continue
+                </Button>
+              </motion.div>
+            </form>
+          ) : (
+            <>
+              <motion.h2
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                className="text-2xl sm:text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-chart-4"
+              >
+                {visitorName ? `Hello, ${visitorName}!` : 'Hello there!'}
+              </motion.h2>
+
+              <motion.p
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="text-lg text-muted-foreground mb-8"
+              >
+                {welcomeMessage}
+              </motion.p>
+
+              <motion.div
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="w-full"
+              >
+                <Button
+                  className="w-full rounded-full h-12 text-md shadow-lg hover:shadow-primary/20 transition-all hover:scale-[1.02]"
+                  onClick={() => setIsModalOpen(false)}
+                >
+                  Continue to Site
+                </Button>
+              </motion.div>
+            </>
+          )}
         </div>
       </Modal>
     </div>
