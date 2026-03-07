@@ -57,7 +57,7 @@ const skillsGroups = [
 
 const timelineData = [
     {
-        year: "2023 - Present",
+        year: "2020 - 2023",
         title: "Senior Software Engineer",
         company: "TechNova Solutions",
         description: "Architecting and building scalable full-stack applications using Next.js, Node.js, and Postgres. Leading a cross-functional team of developers and mentoring juniors while establishing CI/CD pipelines and best practices across the organization.",
@@ -65,7 +65,7 @@ const timelineData = [
         skills: ["Next.js", "Node.js", "PostgreSQL", "System Architecture", "Leadership"],
     },
     {
-        year: "2021 - 2023",
+        year: "2023 - Present",
         title: "Software Engineer",
         company: "Digital Edge Agency",
         description: "Developed robust backend APIs and interactive client-facing web applications. Improved overall application performance, reduced database query times, and optimized core web vitals.",
