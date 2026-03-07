@@ -57,28 +57,28 @@ const skillsGroups = [
 
 const timelineData = [
     {
-        year: "2020 - 2023",
-        title: "Senior Frontend Engineer",
+        year: "2023 - Present",
+        title: "Senior Software Engineer",
         company: "TechNova Solutions",
-        description: "Architecting and building scalable frontend applications using Next.js and React. Leading a team of developers and mentoring juniors while establishing best practices across the organization.",
+        description: "Architecting and building scalable full-stack applications using Next.js, Node.js, and Postgres. Leading a cross-functional team of developers and mentoring juniors while establishing CI/CD pipelines and best practices across the organization.",
         icon: <Briefcase className="h-5 w-5" />,
-        skills: ["Next.js", "React", "System Architecture", "Leadership"],
+        skills: ["Next.js", "Node.js", "PostgreSQL", "System Architecture", "Leadership"],
     },
     {
-        year: "2020 - 2022",
-        title: "Frontend Developer",
+        year: "2021 - 2023",
+        title: "Software Engineer",
         company: "Digital Edge Agency",
-        description: "Developed and maintained interactive client-facing web applications. Improved performance metrics and core web vitals through significant code refactoring.",
+        description: "Developed robust backend APIs and interactive client-facing web applications. Improved overall application performance, reduced database query times, and optimized core web vitals.",
         icon: <Briefcase className="h-5 w-5" />,
-        skills: ["React", "TypeScript", "Performance Optimization", "Tailwind CSS"],
+        skills: ["React", "TypeScript", "Express", "MongoDB", "Performance Optimization"],
     },
     {
-        year: "2018 - 2020",
+        year: "2020 - 2021",
         title: "Web Developer",
         company: "Creative Solutions",
-        description: "Built responsive marketing sites and e-commerce platforms. Worked closely with designers to ensure pixel-perfect implementation and engaging user experiences.",
+        description: "Built responsive marketing sites and integrated third-party APIs. Worked closely with product owners to ensure seamless user experiences and robust data flow.",
         icon: <Briefcase className="h-5 w-5" />,
-        skills: ["JavaScript", "HTML/CSS", "UI/UX Implementation", "Framer Motion"],
+        skills: ["JavaScript", "HTML/CSS", "REST APIs", "UI/UX Implementation"],
     },
     {
         year: "2018",
@@ -104,17 +104,17 @@ export default function AboutPage() {
                         Kelvin Atsu Djayouri
                     </h1>
                     <h2 className="text-xl md:text-2xl text-primary font-mono mb-6 text-center md:text-left">
-                        Senior Frontend Developer
+                        Software Engineer
                     </h2>
                     <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                         <p>
-                            A Senior Frontend Engineer with 5 years of experience in architecting scalable applications and leading frontend teams, specializing in building intuitive, pixel-perfect interfaces and seamless user experiences.
+                            A Software Engineer with 5 years of experience in architecting scalable applications and leading cross-functional teams, specializing in building robust backend systems and seamless user experiences.
                         </p>
                         <p>
-                            With a strong foundation in modern web technologies, my approach combines technical expertise with a keen eye for design. My development journey has involved building high-quality applications from the ground up and mentoring junior developers to establish best practices.
+                            With a strong foundation in modern web technologies, my approach combines technical depth across the stack with a keen eye for system architecture. My development journey has involved building high-quality enterprise applications from the ground up, scaling databases, and mentoring junior developers to establish CI/CD best practices.
                         </p>
                         <p>
-                            I specialize in translating complex designs into responsive, performant, and accessible interfaces. Currently, my focus is on leveraging advanced React patterns and Next.js server components to engineer performant, scalable, real-world solutions at an enterprise level.
+                            I specialize in engineering comprehensive solutions across the frontend and backend. Currently, my focus is on leveraging advanced React patterns, Next.js server components, distributed databases, and robust API design to deliver performant and scalable real-world solutions at an enterprise level.
                         </p>
                         <p>
                             I am open to collaborations, constructive professional discussions, and connecting with fellow engineers. Let's build something exceptional together.
