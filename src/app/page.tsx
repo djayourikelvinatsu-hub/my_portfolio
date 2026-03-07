@@ -89,12 +89,12 @@ export default function Home() {
           </motion.div>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 sm:mb-6 leading-[1.1]">
-            <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">Crafting</motion.span>
-            <motion.span variants={wordVariants} className="inline-block">Digital Experiences.</motion.span>
+            <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">Architecting</motion.span>
+            <motion.span variants={wordVariants} className="inline-block">Scalable Software.</motion.span>
             <br className="hidden lg:block" />
             <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary via-chart-2 to-chart-4 pb-2 pt-2 lg:pt-0">
               <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">Engineering</motion.span>
-              <motion.span variants={wordVariants} className="inline-block">Scalable Systems.</motion.span>
+              <motion.span variants={wordVariants} className="inline-block">Robust Backends.</motion.span>
             </span>
           </h1>
 
