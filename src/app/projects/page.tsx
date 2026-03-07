@@ -1,80 +1,85 @@
 import Link from "next/link"
-import { motion } from "framer-motion"
-import { Briefcase, ArrowRight, ExternalLink } from "lucide-react"
+import { ArrowRight, ExternalLink } from "lucide-react"
 import { getAllProjects } from "@/lib/projects"
-import { Card, CardDescription, CardHeader, CardTitle, CardFooter, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { FadeIn, StaggerContainer, StaggerItem, HoverCard } from "@/components/ui/animations"
 
 export default function ProjectsIndex() {
+    // Note: This is an RSC (React Server Component) so we can't use framer-motion directly for scroll animations here 
+    // unless we extract a client component wrapper. For simplicity, we'll keep it static or extract one if needed.
+    // The previous implementation used client components (StaggerContainer, etc.) which means it might have been missing `use client` or the wrappers were client-side.
+    // We will build a clean, static, high-end CSS design for this page.
     const projects = getAllProjects()
 
     return (
-        <div className="container mx-auto px-4 py-12 md:py-24 max-w-5xl">
-            <FadeIn className="mb-16 text-center md:text-left">
-                <div className="inline-flex items-center rounded-lg bg-chart-4/10 p-3 mb-6">
-                    <Briefcase className="h-6 w-6 text-chart-4" />
-                </div>
-                <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-                    Featured Work
+        <div className="container mx-auto px-4 py-16 md:py-32 max-w-5xl">
+            <div className="mb-24 flex flex-col md:text-left">
+                <span className="text-primary font-mono text-sm tracking-widest uppercase mb-4">{"//"} MY WORK</span>
+                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-[1.1]">
+                    Featured Projects
                 </h1>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto md:mx-0">
+                <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
                     A selection of projects where I've tackled complex architectural challenges,
                     driven performance improvements, and built scalable design systems.
                 </p>
-            </FadeIn>
+            </div>
 
-            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex flex-col space-y-16">
                 {projects.map((project, idx) => (
-                    <StaggerItem key={project.slug}>
-                        <HoverCard className="h-full">
-                            <Card className="group hover:border-chart-4/50 transition-all shadow-sm bg-card/60 backdrop-blur-sm flex flex-col justify-center items-center text-center h-full min-h-[320px] overflow-hidden rounded-[80px] p-6 border-2 border-transparent">
-                                <CardHeader className="flex-1 items-center px-2 py-4">
-                                    <div className="flex justify-center items-center mb-2">
-                                        <CardTitle className="text-xl md:text-2xl group-hover:text-chart-4 transition-colors">
-                                            <Link href={`/projects/${project.slug}`}>
-                                                {project.meta.title}
-                                            </Link>
-                                        </CardTitle>
-                                    </div>
-                                    <p className="text-xs md:text-sm text-chart-4 font-mono mb-2">{project.meta.role}</p>
-                                    <CardDescription className="text-sm md:text-base text-foreground/80 mt-2 line-clamp-3">
-                                        {project.meta.description}
-                                    </CardDescription>
-                                </CardHeader>
-                                <CardContent className="px-2 py-2">
-                                    <div className="flex flex-wrap justify-center gap-2 mt-2">
-                                        {project.meta.stacks?.slice(0, 3).map(stack => (
-                                            <span key={stack} className="text-[10px] md:text-xs bg-muted text-muted-foreground border border-border/50 px-2.5 py-1 rounded-full">
-                                                {stack}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </CardContent>
-                                <CardFooter className="pt-2 pb-6 flex flex-col gap-2 w-full max-w-[200px]">
-                                    <Button asChild variant="default" size="sm" className="w-full bg-card hover:bg-chart-4 hover:text-white border text-foreground transition-all rounded-full">
+                    <div
+                        key={project.slug}
+                        className="group relative flex flex-col p-8 md:p-12 rounded-[40px] bg-slate-900 border border-white/5 hover:border-white/10 transition-all overflow-hidden"
+                    >
+                        {/* Background Glow */}
+                        <div className="absolute top-0 right-0 p-40 bg-primary/5 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+                        <div className="relative z-10 flex flex-col h-full">
+                            <span className="text-xs font-mono tracking-widest text-primary mb-4 uppercase">
+                                {project.meta.role || "PROJECT"}
+                            </span>
+
+                            <Link href={`/projects/${project.slug}`} className="group-hover:text-primary transition-colors w-fit">
+                                <h3 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">{project.meta.title}</h3>
+                            </Link>
+
+                            <p className="text-muted-foreground max-w-3xl mb-10 leading-relaxed text-lg">
+                                {project.meta.description}
+                            </p>
+
+                            <div className="flex flex-wrap items-center justify-between gap-6 mt-auto pt-8 border-t border-white/5">
+                                <div className="flex flex-wrap gap-2">
+                                    {project.meta.stacks?.map((stack) => (
+                                        <span key={stack} className="px-4 py-1.5 text-xs font-mono uppercase tracking-widest bg-white/5 rounded-full border border-white/5 text-muted-foreground">
+                                            {stack}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                <div className="flex gap-4">
+                                    <Button asChild variant="outline" className="rounded-full px-6 font-mono text-xs tracking-widest uppercase border-white/10 hover:bg-white/5">
                                         <Link href={`/projects/${project.slug}`}>
-                                            Case Study <ArrowRight className="ml-2 h-3 w-3" />
+                                            Case Study <ArrowRight className="w-4 h-4 ml-2" />
                                         </Link>
                                     </Button>
+
                                     {project.meta.link && (
-                                        <Button asChild variant="outline" size="sm" className="w-full hover:bg-primary hover:text-primary-foreground border-primary/20 rounded-full">
-                                            <a href={project.meta.link} target="_blank" rel="noreferrer" aria-label={`Visit live site for ${project.meta.title}`}>
-                                                Live Site <ExternalLink className="ml-2 h-3 w-3" />
+                                        <Button asChild variant="ghost" className="rounded-full px-6 font-mono text-xs tracking-widest uppercase text-primary hover:bg-primary/10 hover:text-primary transition-colors">
+                                            <a href={project.meta.link} target="_blank" rel="noreferrer">
+                                                Live Site <ExternalLink className="w-4 h-4 ml-2" />
                                             </a>
                                         </Button>
                                     )}
-                                </CardFooter>
-                            </Card>
-                        </HoverCard>
-                    </StaggerItem>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 ))}
+
                 {projects.length === 0 && (
-                    <StaggerItem className="col-span-1 md:col-span-2 lg:col-span-3 py-20 text-center border rounded-[80px] bg-muted/20 border-dashed">
-                        <p className="text-muted-foreground">No projects found. Create some MDX files in the content directory!</p>
-                    </StaggerItem>
+                    <div className="py-20 text-center border rounded-[40px] bg-slate-900 border-dashed border-white/10">
+                        <p className="text-muted-foreground font-mono uppercase tracking-widest">No projects found. Add some MDX files.</p>
+                    </div>
                 )}
-            </StaggerContainer>
+            </div>
         </div>
     )
 }

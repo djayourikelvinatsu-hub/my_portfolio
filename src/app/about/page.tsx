@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { Calendar, GraduationCap, Briefcase, Award } from "lucide-react"
+import { Calendar, Briefcase, Award } from "lucide-react"
 import {
     SiReact,
     SiNextdotjs,
@@ -20,37 +20,51 @@ import {
     SiPhp
 } from "react-icons/si"
 import { FaJava } from "react-icons/fa"
-import { FadeIn, StaggerContainer, StaggerItem, HoverCard } from "@/components/ui/animations"
+
+const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+}
+
+const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1
+        }
+    }
+}
 
 const skillsGroups = [
     {
         category: "Languages & Core",
         skills: [
-            { name: "JavaScript", icon: <SiJavascript className="h-8 w-8 text-yellow-500" /> },
-            { name: "TypeScript", icon: <SiTypescript className="h-8 w-8 text-blue-500" /> },
-            { name: "Python", icon: <SiPython className="h-8 w-8 text-blue-400" /> },
-            { name: "C++", icon: <SiCplusplus className="h-8 w-8 text-blue-700" /> },
-            { name: "Java", icon: <FaJava className="h-8 w-8 text-orange-500" /> },
-            { name: "PHP", icon: <SiPhp className="h-8 w-8 text-indigo-400" /> },
-            { name: "HTML5", icon: <SiHtml5 className="h-8 w-8 text-orange-500" /> },
-            { name: "CSS3", icon: <SiCss3 className="h-8 w-8 text-blue-600" /> },
+            { name: "JavaScript", icon: <SiJavascript className="h-6 w-6 text-yellow-500" /> },
+            { name: "TypeScript", icon: <SiTypescript className="h-6 w-6 text-blue-500" /> },
+            { name: "Python", icon: <SiPython className="h-6 w-6 text-blue-400" /> },
+            { name: "C++", icon: <SiCplusplus className="h-6 w-6 text-blue-700" /> },
+            { name: "Java", icon: <FaJava className="h-6 w-6 text-orange-500" /> },
+            { name: "PHP", icon: <SiPhp className="h-6 w-6 text-indigo-400" /> },
+            { name: "HTML5", icon: <SiHtml5 className="h-6 w-6 text-orange-500" /> },
+            { name: "CSS3", icon: <SiCss3 className="h-6 w-6 text-blue-600" /> },
         ]
     },
     {
         category: "Frameworks & UI",
         skills: [
-            { name: "React", icon: <SiReact className="h-8 w-8 text-sky-400" /> },
-            { name: "Next.js", icon: <SiNextdotjs className="h-8 w-8 text-foreground" /> },
-            { name: "Tailwind CSS", icon: <SiTailwindcss className="h-8 w-8 text-sky-500" /> },
-            { name: "Framer Motion", icon: <SiFramer className="h-8 w-8 text-purple-600" /> },
+            { name: "React", icon: <SiReact className="h-6 w-6 text-sky-400" /> },
+            { name: "Next.js", icon: <SiNextdotjs className="h-6 w-6 text-white" /> },
+            { name: "Tailwind CSS", icon: <SiTailwindcss className="h-6 w-6 text-sky-500" /> },
+            { name: "Framer Motion", icon: <SiFramer className="h-6 w-6 text-purple-600" /> },
         ]
     },
     {
         category: "Tools & Platforms",
         skills: [
-            { name: "Git", icon: <SiGit className="h-8 w-8 text-orange-600" /> },
-            { name: "Node.js", icon: <SiNodedotjs className="h-8 w-8 text-green-600" /> },
-            { name: "Figma", icon: <SiFigma className="h-8 w-8 text-pink-500" /> },
+            { name: "Git", icon: <SiGit className="h-6 w-6 text-orange-600" /> },
+            { name: "Node.js", icon: <SiNodedotjs className="h-6 w-6 text-green-600" /> },
+            { name: "Figma", icon: <SiFigma className="h-6 w-6 text-pink-500" /> },
         ]
     }
 ]
@@ -65,7 +79,7 @@ const timelineData = [
         skills: ["Next.js", "Node.js", "PostgreSQL", "System Architecture", "Leadership"],
     },
     {
-        year: "2023 - Present",
+        year: "2023 - 2025",
         title: "Software Engineer",
         company: "Digital Edge Agency",
         description: "Developed robust backend APIs and interactive client-facing web applications. Improved overall application performance, reduced database query times, and optimized core web vitals.",
@@ -92,21 +106,20 @@ const timelineData = [
 
 export default function AboutPage() {
     return (
-        <div className="container mx-auto px-4 py-12 md:py-24 max-w-4xl">
+        <div className="container mx-auto px-4 py-16 md:py-32 max-w-5xl">
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="mb-16 flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start"
+                initial="hidden"
+                animate="visible"
+                variants={staggerContainer}
+                className="mb-24 flex flex-col md:flex-row gap-12 md:gap-16 items-center md:items-start"
             >
-                <div className="flex-1 order-2 md:order-1">
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-center md:text-left">
+                <motion.div variants={fadeIn} className="flex-1 order-2 md:order-1 flex flex-col">
+                    <span className="text-primary font-mono text-sm tracking-widest uppercase mb-4 block md:inline-block">{"//"} THE DEVELOPER</span>
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
                         Kelvin Atsu Djayouri
                     </h1>
-                    <h2 className="text-xl md:text-2xl text-primary font-mono mb-6 text-center md:text-left">
-                        Software Engineer
-                    </h2>
-                    <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+
+                    <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                         <p>
                             A Software Engineer with 5 years of experience in architecting scalable applications and leading cross-functional teams, specializing in building robust backend systems and seamless user experiences.
                         </p>
@@ -116,22 +129,13 @@ export default function AboutPage() {
                         <p>
                             I specialize in engineering comprehensive solutions across the frontend and backend. Currently, my focus is on leveraging advanced React patterns, Next.js server components, distributed databases, and robust API design to deliver performant and scalable real-world solutions at an enterprise level.
                         </p>
-                        <p>
-                            I am open to collaborations, constructive professional discussions, and connecting with fellow engineers. Let's build something exceptional together.
-                        </p>
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="w-48 h-48 md:w-64 md:h-64 relative flex-shrink-0 order-1 md:order-2">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-chart-2/20 rounded-full blur-2xl" />
-                    <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-background shadow-2xl">
-                        <Image
-                            src="/profile-bg.jpg"
-                            alt="Profile Background"
-                            fill
-                            className="object-cover"
-                            priority
-                        />
+                <motion.div variants={fadeIn} className="w-64 h-64 md:w-80 md:h-80 relative flex-shrink-0 order-1 md:order-2">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-cyan-400/20 to-teal-500/20 rounded-[40px] rotate-6 scale-105 blur-md" />
+                    <div className="absolute inset-0 bg-slate-900 border border-white/10 rounded-[40px] -rotate-3 transition-transform hover:rotate-0 duration-500" />
+                    <div className="relative w-full h-full rounded-[40px] overflow-hidden border border-white/10 shadow-2xl">
                         <Image
                             src="/avatar.jpg"
                             alt="Kelvin Atsu Djayouri"
@@ -140,80 +144,101 @@ export default function AboutPage() {
                             priority
                         />
                     </div>
+                </motion.div>
+            </motion.div>
+
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={staggerContainer}
+                className="py-12 border-t border-white/5"
+            >
+                <motion.div variants={fadeIn} className="mb-12">
+                    <span className="text-primary font-mono text-sm tracking-widest uppercase">{"//"} CAREER JOURNEY</span>
+                    <h2 className="text-3xl font-bold mt-4">Experience & Education</h2>
+                </motion.div>
+
+                <div className="relative border-l border-white/10 ml-3 md:ml-6 space-y-12 pb-12">
+                    {timelineData.map((item, index) => (
+                        <motion.div
+                            key={index}
+                            variants={fadeIn}
+                            className="relative pl-8 md:pl-12"
+                        >
+                            <div className="absolute -left-4 md:-left-4 top-1 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-slate-900 text-primary shadow-[0_0_15px_rgba(20,184,166,0.3)]">
+                                {item.icon}
+                            </div>
+
+                            <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-3">
+                                <h3 className="text-2xl font-bold text-white">{item.title}</h3>
+                                <span className="text-primary font-mono text-sm bg-primary/10 border border-primary/20 px-3 py-1 rounded-full flex items-center gap-2 w-fit">
+                                    <Calendar className="h-3 w-3" />
+                                    {item.year}
+                                </span>
+                            </div>
+
+                            <h4 className="text-muted-foreground font-mono text-sm uppercase tracking-wider mb-4">{item.company}</h4>
+
+                            <p className="text-muted-foreground leading-relaxed mb-6 max-w-3xl text-lg">
+                                {item.description}
+                            </p>
+
+                            <div className="flex flex-wrap gap-2 mt-4">
+                                {item.skills.map((skill) => (
+                                    <span
+                                        key={skill}
+                                        className="px-3 py-1 text-xs font-mono tracking-widest uppercase rounded-full bg-slate-900 border border-white/10 text-muted-foreground"
+                                    >
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
             </motion.div>
 
-            <div className="relative border-l border-border/60 ml-3 md:ml-6 space-y-12 pb-12">
-                {timelineData.map((item, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="relative pl-8 md:pl-12"
-                    >
-                        <div className="absolute -left-4 md:-left-4 top-1 flex h-8 w-8 items-center justify-center rounded-full border bg-background text-primary shadow-sm dark:bg-card">
-                            {item.icon}
-                        </div>
-
-                        <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4 mb-2">
-                            <h3 className="text-xl font-bold">{item.title}</h3>
-                            <span className="text-primary font-mono text-sm bg-primary/10 px-2 py-0.5 rounded flex items-center gap-1 w-fit">
-                                <Calendar className="h-3 w-3" />
-                                {item.year}
-                            </span>
-                        </div>
-
-                        <h4 className="text-muted-foreground font-medium mb-4">{item.company}</h4>
-
-                        <p className="text-foreground/80 leading-relaxed mb-4 max-w-2xl">
-                            {item.description}
-                        </p>
-
-                        <div className="flex flex-wrap gap-2 mt-4">
-                            {item.skills.map((skill) => (
-                                <span
-                                    key={skill}
-                                    className="px-2.5 py-1 text-xs font-medium rounded-full bg-secondary text-secondary-foreground border border-border/50"
-                                >
-                                    {skill}
-                                </span>
-                            ))}
-                        </div>
-                    </motion.div>
-                ))}
-            </div>
-
             {/* Skills Section */}
-            <FadeIn className="pt-24 pb-12" direction="up">
-                <div className="mb-12 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={staggerContainer}
+                className="pt-24 pb-12 border-t border-white/5"
+            >
+                <div className="mb-16">
+                    <span className="text-primary font-mono text-sm tracking-widest uppercase">{"//"} TECHNICAL ARSENAL</span>
+                    <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-6">
                         Skills & Technologies
                     </h2>
-                    <p className="text-muted-foreground max-w-2xl mx-auto">
-                        A collection of technologies I use to build scalable and high-performance applications.
+                    <p className="text-muted-foreground max-w-2xl text-lg">
+                        The tools I use every day to build scalable and high-performance applications.
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-12">
+                <div className="flex flex-col gap-16">
                     {skillsGroups.map((group, i) => (
-                        <div key={group.category} className="max-w-4xl mx-auto w-full">
-                            <h3 className="text-xl font-semibold mb-6 text-center md:text-left text-foreground/90">{group.category}</h3>
-                            <StaggerContainer delay={i * 0.1} className="flex flex-wrap justify-center md:justify-start gap-4">
+                        <div key={group.category} className="w-full">
+                            <h3 className="text-xl font-mono uppercase tracking-widest mb-8 text-white/80">{group.category}</h3>
+                            <motion.div variants={staggerContainer} className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
                                 {group.skills.map(skill => (
-                                    <StaggerItem key={skill.name}>
-                                        <HoverCard className="flex items-center gap-3 px-5 py-3 rounded-full bg-card/60 hover:bg-muted/80 backdrop-blur-sm transition-all shadow-sm border border-border/40 hover:border-chart-4/50">
-                                            <div className="flex-shrink-0">{skill.icon}</div>
-                                            <span className="text-sm font-medium whitespace-nowrap">{skill.name}</span>
-                                        </HoverCard>
-                                    </StaggerItem>
+                                    <motion.div
+                                        key={skill.name}
+                                        variants={fadeIn}
+                                        className="flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-900 border border-white/5 hover:border-primary/40 hover:bg-primary/5 transition-all group"
+                                    >
+                                        <div className="flex-shrink-0 mb-4 group-hover:scale-110 group-hover:-translate-y-1 transition-transform">
+                                            {skill.icon}
+                                        </div>
+                                        <span className="text-sm font-mono tracking-wider text-center text-muted-foreground group-hover:text-white transition-colors">{skill.name}</span>
+                                    </motion.div>
                                 ))}
-                            </StaggerContainer>
+                            </motion.div>
                         </div>
                     ))}
                 </div>
-            </FadeIn>
+            </motion.div>
         </div>
     )
 }

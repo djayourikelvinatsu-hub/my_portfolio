@@ -8,13 +8,10 @@ import { Button } from "@/components/ui/button"
 import { Button as UIButton } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 
-// Mermaid Wrapper for rendering textual diagrams directly
 function MermaidDiagram({ chart }: { chart: string }) {
-    // In a real application we would use mermaid.js to parse this on the client
-    // For the portfolio, we'll display the definition with a pre block wrapper emphasizing it's architecture
     return (
-        <Card className="my-8 overflow-hidden border-chart-2/20 bg-muted/10">
-            <div className="bg-chart-2/10 px-4 py-2 border-b border-chart-2/20 flex items-center font-mono text-xs text-chart-2">
+        <Card className="my-8 overflow-hidden border-white/10 bg-slate-900/50">
+            <div className="bg-primary/10 px-4 py-3 border-b border-white/5 flex items-center font-mono text-xs tracking-widest uppercase text-primary">
                 <GitBranch className="h-4 w-4 mr-2" /> Architecture Diagram
             </div>
             <div className="p-6 overflow-x-auto">
@@ -27,17 +24,17 @@ function MermaidDiagram({ chart }: { chart: string }) {
 }
 
 const components = {
-    h1: (props: any) => <h1 className="text-4xl font-extrabold mt-12 mb-6 tracking-tight" {...props} />,
-    h2: (props: any) => <h2 className="text-3xl font-semibold mt-12 mb-4 tracking-tight border-b pb-2 flex items-center gap-2" {...props} />,
-    h3: (props: any) => <h3 className="text-2xl font-semibold mt-8 mb-4 tracking-tight" {...props} />,
-    p: (props: any) => <p className="leading-7 [&:not(:first-child)]:mt-6 text-foreground/90" {...props} />,
-    ul: (props: any) => <ul className="my-6 ml-6 list-disc [&>li]:mt-2" {...props} />,
-    li: (props: any) => <li className="leading-7" {...props} />,
+    h1: (props: any) => <h1 className="text-4xl font-bold mt-12 mb-6 tracking-tight text-white" {...props} />,
+    h2: (props: any) => <h2 className="text-3xl font-bold mt-12 mb-4 tracking-tight border-b border-white/5 pb-2 flex items-center gap-2 text-white/90" {...props} />,
+    h3: (props: any) => <h3 className="text-2xl font-bold mt-8 mb-4 tracking-tight text-white/80" {...props} />,
+    p: (props: any) => <p className="leading-relaxed [&:not(:first-child)]:mt-6 text-muted-foreground text-lg" {...props} />,
+    ul: (props: any) => <ul className="my-6 ml-6 list-disc [&>li]:mt-2 text-muted-foreground text-lg" {...props} />,
+    li: (props: any) => <li className="leading-relaxed" {...props} />,
     pre: (props: any) => (
-        <pre className="mb-4 mt-6 overflow-x-auto rounded-xl border bg-zinc-950 p-4 text-zinc-50 shadow-sm" {...props} />
+        <pre className="mb-4 mt-6 overflow-x-auto rounded-2xl border border-white/10 bg-slate-950 p-6 text-zinc-50 shadow-sm" {...props} />
     ),
     code: (props: any) => (
-        <code className="relative rounded bg-muted/50 px-[0.3rem] py-[0.2rem] font-mono text-sm" {...props} />
+        <code className="relative rounded bg-white/5 px-[0.3rem] py-[0.2rem] font-mono text-sm text-primary" {...props} />
     ),
     Button: UIButton,
     Card,
@@ -58,45 +55,47 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
         const project = getProjectBySlug(params.slug)
 
         return (
-            <article className="container mx-auto px-4 py-12 md:py-20 max-w-4xl">
-                <Button asChild variant="ghost" className="mb-8 -ml-4">
-                    <Link href="/projects">
-                        <ArrowLeft className="mr-2 h-4 w-4" />
-                        All Projects
+            <article className="container mx-auto px-4 py-16 md:py-24 max-w-4xl">
+                <Button asChild variant="ghost" className="mb-12 hover:bg-white/5 hover:text-white transition-colors group">
+                    <Link href="/projects" className="font-mono text-xs tracking-widest uppercase">
+                        <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
+                        Back to Projects
                     </Link>
                 </Button>
 
-                <header className="mb-14 rounded-3xl bg-card border p-6 sm:p-8 md:p-12 shadow-sm relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-chart-4/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+                <header className="mb-16 rounded-[40px] bg-slate-900 border border-white/5 p-8 sm:p-12 md:p-16 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
-                    <div className="relative z-10 flex flex-col items-start gap-3 md:gap-4">
-                        <span className="bg-chart-4/10 text-chart-4 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold tracking-tight">
-                            Case Study
+                    <div className="relative z-10 flex flex-col items-start gap-4">
+                        <span className="text-primary font-mono text-sm tracking-widest uppercase mb-2">
+                            {"//"} {project.meta.role || "Case Study"}
                         </span>
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-2">
+
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4 leading-[1.1] text-white">
                             {project.meta.title}
                         </h1>
-                        <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-4 md:mb-6">
+
+                        <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-8">
                             {project.meta.description}
                         </p>
 
-                        <div className="flex flex-wrap gap-2 mb-6">
+                        <div className="flex flex-wrap gap-3 mb-10 border-b border-white/5 pb-10 w-full">
                             {project.meta.stacks?.map((stack) => (
-                                <span key={stack} className="px-3 py-1 bg-background border text-xs font-medium rounded-full">
+                                <span key={stack} className="px-4 py-1.5 bg-white/5 border border-white/5 text-xs font-mono tracking-widest uppercase rounded-full text-muted-foreground">
                                     {stack}
                                 </span>
                             ))}
                         </div>
 
-                        <div className="flex flex-wrap items-center justify-between text-sm font-medium border-t pt-6 w-full mt-4 gap-4">
+                        <div className="flex flex-wrap items-center justify-between font-mono text-sm tracking-widest uppercase w-full gap-6">
                             <div className="flex items-center">
-                                <span className="text-muted-foreground mr-2">Role:</span>
-                                <span>{project.meta.role}</span>
+                                <span className="text-muted-foreground mr-3">Role /</span>
+                                <span className="text-white">{project.meta.role}</span>
                             </div>
                             {project.meta.link && (
-                                <Button asChild variant="outline" size="sm" className="hover:bg-primary hover:text-primary-foreground border-primary/20">
+                                <Button asChild variant="outline" className="rounded-full border-white/10 hover:bg-white/5 text-xs font-mono tracking-widest uppercase">
                                     <a href={project.meta.link} target="_blank" rel="noreferrer" className="flex items-center gap-2">
-                                        <ExternalLink className="h-4 w-4" /> Live Project
+                                        View Live <ExternalLink className="h-4 w-4" />
                                     </a>
                                 </Button>
                             )}
@@ -104,7 +103,7 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
                     </div>
                 </header>
 
-                <div className="prose prose-neutral dark:prose-invert max-w-none prose-headings:text-foreground prose-a:text-chart-4">
+                <div className="prose prose-invert max-w-none prose-headings:text-white prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
                     {/* @ts-ignore */}
                     <MDXRemote source={project.content} components={components} />
                 </div>

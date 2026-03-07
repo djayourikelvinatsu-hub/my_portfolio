@@ -31,11 +31,11 @@ export function Navbar() {
     React.useEffect(() => setMounted(true), [])
 
     return (
-        <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur-md">
+        <header className="sticky top-0 z-40 w-full border-b border-white/5 bg-slate-950/80 backdrop-blur-md">
             <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-8">
-                <Link href="/" className="flex items-center space-x-2">
-                    <Terminal className="h-6 w-6 text-primary" />
-                    <span className="font-bold inline-block font-mono tracking-tight">kad_dev</span>
+                <Link href="/" className="flex items-center space-x-2 group">
+                    <span className="text-primary font-mono font-bold text-xl group-hover:text-white transition-colors">{"//"}</span>
+                    <span className="font-bold inline-block font-mono tracking-wider text-lg">KAD</span>
                 </Link>
 
                 {/* Desktop Nav */}
@@ -45,12 +45,13 @@ export function Navbar() {
                             key={item.path}
                             href={item.path}
                             className={cn(
-                                "relative text-sm font-medium transition-colors hover:text-primary",
+                                "relative text-xs font-mono tracking-widest uppercase transition-colors hover:text-primary",
                                 pathname === item.path
-                                    ? "text-primary"
+                                    ? "text-primary font-semibold"
                                     : "text-muted-foreground"
                             )}
                         >
+                            {pathname !== item.path && <span className="opacity-0 group-hover:opacity-100 transition-opacity mr-1">{"//"}</span>}
                             {item.name}
                             {pathname === item.path && (
                                 <motion.div
@@ -62,24 +63,19 @@ export function Navbar() {
                         </Link>
                     ))}
 
-                    <div className="flex items-center gap-2 ml-2">
+                    <div className="flex items-center gap-4 ml-4 border-l border-white/10 pl-4">
                         <LocalTime />
                         <Button
                             variant="ghost"
                             size="icon"
                             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                            className="ml-2"
+                            className="hidden" // Hiding theme toggle since we are prioritizing dark mode, but keeping code for safety
                         >
-                            {mounted ? (
-                                theme === "dark" ? (
-                                    <Sun className="h-4 w-4" />
-                                ) : (
-                                    <Moon className="h-4 w-4" />
-                                )
-                            ) : (
-                                <div className="h-4 w-4" />
-                            )}
+                            {mounted && theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
                             <span className="sr-only">Toggle theme</span>
+                        </Button>
+                        <Button asChild className="hidden lg:flex rounded-full px-6 font-mono text-xs tracking-widest uppercase hover:scale-105 transition-transform">
+                            <a href="/#contact">Let's Talk</a>
                         </Button>
                     </div>
                 </nav>
