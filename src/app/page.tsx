@@ -8,6 +8,7 @@ import { ArrowRight, Code2, Layers, Zap, Mail, Phone } from "lucide-react"
 import { FaWhatsapp } from "react-icons/fa"
 
 import { Button } from "@/components/ui/button"
+import { Modal } from "@/components/ui/modal"
 
 const welcomeMessages = [
   "Welcome to my digital space! 👋",
@@ -44,11 +45,19 @@ const wordVariants: Variants = {
 export default function Home() {
   const [mounted, setMounted] = useState(false)
   const [welcomeMessage, setWelcomeMessage] = useState("")
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     setMounted(true)
     const randomIndex = Math.floor(Math.random() * welcomeMessages.length)
     setWelcomeMessage(welcomeMessages[randomIndex])
+
+    // Add a slight delay before showing the modal for a better UX
+    const timer = setTimeout(() => {
+      setIsModalOpen(true)
+    }, 800)
+
+    return () => clearTimeout(timer)
   }, [])
 
   return (
@@ -108,19 +117,6 @@ export default function Home() {
               priority
             />
           </motion.div>
-
-          <div className="h-8 sm:h-10 mb-2 sm:mb-4 flex items-center justify-center">
-            {mounted && (
-              <motion.h2
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="text-lg sm:text-xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-primary to-chart-4"
-              >
-                {welcomeMessage}
-              </motion.h2>
-            )}
-          </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 sm:mb-6 leading-[1.1]">
             <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">Architecting</motion.span>
@@ -213,6 +209,55 @@ export default function Home() {
           ))}
         </motion.div>
       </div>
+
+      <Modal
+        isOpen={mounted && isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        className="max-w-md w-full bg-background/95 backdrop-blur-xl border-primary/20 shadow-2xl"
+      >
+        <div className="flex flex-col items-center text-center py-6 px-2">
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
+            className="mb-6 h-20 w-20 bg-primary/10 rounded-full flex items-center justify-center shadow-inner"
+          >
+            <span className="text-4xl leading-none block transform translate-y-[-2px]">👋</span>
+          </motion.div>
+
+          <motion.h2
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-2xl sm:text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-chart-4"
+          >
+            Hello there!
+          </motion.h2>
+
+          <motion.p
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="text-lg text-muted-foreground mb-8"
+          >
+            {welcomeMessage}
+          </motion.p>
+
+          <motion.div
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="w-full"
+          >
+            <Button
+              className="w-full rounded-full h-12 text-md shadow-lg hover:shadow-primary/20 transition-all hover:scale-[1.02]"
+              onClick={() => setIsModalOpen(false)}
+            >
+              Continue to Site
+            </Button>
+          </motion.div>
+        </div>
+      </Modal>
     </div>
   )
 }
