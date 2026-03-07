@@ -11,14 +11,13 @@ import { Button } from "@/components/ui/button"
 import { Modal } from "@/components/ui/modal"
 
 const welcomeMessages = [
-  "Welcome to my digital space! 👋",
-  "Glad you're here! Let's explore. 🚀",
-  "Hello there! Ready to build something awesome? 💻",
-  "Welcome! Grab a coffee and look around. ☕",
-  "Hey! Thanks for stopping by. ✨",
-  "Greetings! Discover my latest work below. 🌟",
-  "Welcome back! Ready for some cool projects? 🔥",
-  "Hi! Let's turn ideas into reality. 💡"
+  "Welcome! I'm Kelvin, a software engineer with a passion for scalable architecture. 🚀",
+  "Hello! Ready to explore some robust backend solutions and full-stack projects? 💻",
+  "Glad you're here! Let's dive into high-performance web development. ⚡",
+  "Welcome to my portfolio! I specialize in architecting reliable & engaging software. ✨",
+  "Hey there! Check out my work in database architecture and API design below. 🛠️",
+  "Greetings! From robust backends to seamless UIs, explore my full-stack journey. 🌟",
+  "Welcome! I build scalable software and craft premium user experiences. 🔥"
 ]
 
 const containerVariants: Variants = {
