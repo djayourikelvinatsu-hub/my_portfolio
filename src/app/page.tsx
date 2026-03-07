@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { motion, Variants } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
@@ -7,6 +8,17 @@ import { ArrowRight, Code2, Layers, Zap, Mail, Phone } from "lucide-react"
 import { FaWhatsapp } from "react-icons/fa"
 
 import { Button } from "@/components/ui/button"
+
+const welcomeMessages = [
+  "Welcome to my digital space! 👋",
+  "Glad you're here! Let's explore. 🚀",
+  "Hello there! Ready to build something awesome? 💻",
+  "Welcome! Grab a coffee and look around. ☕",
+  "Hey! Thanks for stopping by. ✨",
+  "Greetings! Discover my latest work below. 🌟",
+  "Welcome back! Ready for some cool projects? 🔥",
+  "Hi! Let's turn ideas into reality. 💡"
+]
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -30,6 +42,15 @@ const wordVariants: Variants = {
 }
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false)
+  const [welcomeMessage, setWelcomeMessage] = useState("")
+
+  useEffect(() => {
+    setMounted(true)
+    const randomIndex = Math.floor(Math.random() * welcomeMessages.length)
+    setWelcomeMessage(welcomeMessages[randomIndex])
+  }, [])
+
   return (
     <div className="relative flex flex-col items-center flex-1 w-full overflow-hidden">
       {/* Animated Background Elements */}
@@ -87,6 +108,19 @@ export default function Home() {
               priority
             />
           </motion.div>
+
+          <div className="h-8 sm:h-10 mb-2 sm:mb-4 flex items-center justify-center">
+            {mounted && (
+              <motion.h2
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-lg sm:text-xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-primary to-chart-4"
+              >
+                {welcomeMessage}
+              </motion.h2>
+            )}
+          </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 sm:mb-6 leading-[1.1]">
             <motion.span variants={wordVariants} className="inline-block mr-[0.25em]">Architecting</motion.span>
