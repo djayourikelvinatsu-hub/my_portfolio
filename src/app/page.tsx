@@ -73,6 +73,13 @@ export default function Home() {
 
           <motion.div variants={itemVariants} className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-8 rounded-full overflow-hidden border-4 border-background shadow-xl">
             <Image
+              src="/profile-bg.jpg"
+              alt="Profile Background"
+              fill
+              className="object-cover"
+              priority
+            />
+            <Image
               src="/avatar.jpg"
               alt="Kelvin Atsu Djayouri"
               fill
@@ -92,7 +99,7 @@ export default function Home() {
           </h1>
 
           <motion.p variants={itemVariants} className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
-            As a frontend developer, I blend a strong foundation in modern web technologies with a passion for creating premium, high-performance user experiences. By taking a holistic approach to development, from optimizing architecture and state management to crafting seamless, interactive interfaces, I ensure my solutions are robust, engaging, and scalable. Explore my work below.
+            As a senior frontend engineer, I blend extensive architectural experience with a passion for creating premium, high-performance user experiences. By taking a holistic approach to development, from optimizing architecture and state management to crafting seamless, interactive interfaces, I ensure my solutions are robust, engaging, and scalable. Explore my work below.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">

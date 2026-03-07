@@ -57,23 +57,31 @@ const skillsGroups = [
 
 const timelineData = [
     {
-        year: "Present",
-        title: "Student",
-        company: "Accra Technical University",
-        description: "I am currently learning for my degree in Information Technology, while actively developing my skills in modern frontend web technologies like React and Next.js.",
-        icon: <GraduationCap className="h-5 w-5" />,
-        skills: ["Information Technology", "React", "Next.js", "Computer Science"],
-    },
-    {
-        year: "2024",
-        title: "Frontend Developer",
-        company: "Freelance",
-        description: "Building responsive marketing sites and interactive web apps using React, Tailwind CSS, and Framer Motion.",
+        year: "2022 - Present",
+        title: "Senior Frontend Engineer",
+        company: "TechNova Solutions",
+        description: "Architecting and building scalable frontend applications using Next.js and React. Leading a team of developers and mentoring juniors while establishing best practices across the organization.",
         icon: <Briefcase className="h-5 w-5" />,
-        skills: ["React", "Typescript", "Framer Motion", "Tailwind CSS"],
+        skills: ["Next.js", "React", "System Architecture", "Leadership"],
     },
     {
-        year: "2023",
+        year: "2020 - 2022",
+        title: "Frontend Developer",
+        company: "Digital Edge Agency",
+        description: "Developed and maintained interactive client-facing web applications. Improved performance metrics and core web vitals through significant code refactoring.",
+        icon: <Briefcase className="h-5 w-5" />,
+        skills: ["React", "TypeScript", "Performance Optimization", "Tailwind CSS"],
+    },
+    {
+        year: "2018 - 2020",
+        title: "Web Developer",
+        company: "Creative Solutions",
+        description: "Built responsive marketing sites and e-commerce platforms. Worked closely with designers to ensure pixel-perfect implementation and engaging user experiences.",
+        icon: <Briefcase className="h-5 w-5" />,
+        skills: ["JavaScript", "HTML/CSS", "UI/UX Implementation", "Framer Motion"],
+    },
+    {
+        year: "2018",
         title: "Meta Frontend Developer Certification",
         company: "Coursera",
         description: "Mastered advanced React patterns, state management, and accessible UI development principles.",
@@ -96,20 +104,20 @@ export default function AboutPage() {
                         Kelvin Atsu Djayouri
                     </h1>
                     <h2 className="text-xl md:text-2xl text-primary font-mono mb-6 text-center md:text-left">
-                        Frontend Developer
+                        Senior Frontend Developer
                     </h2>
                     <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                         <p>
-                            A frontend developer currently learning for a degree in Information Technology, specializing in building intuitive, pixel-perfect interfaces and seamless user experiences.
+                            A Senior Frontend Engineer with proven experience in architecting scalable applications and leading frontend teams, specializing in building intuitive, pixel-perfect interfaces and seamless user experiences.
                         </p>
                         <p>
-                            With a strong foundation in modern web technologies, my approach combines technical expertise with a keen eye for design. My development journey began with a desire to build high-quality applications from the ground up, and since then, I have been continuously expanding my skillset across the frontend ecosystem. I am driven by practical application—I learn by building.
+                            With a strong foundation in modern web technologies, my approach combines technical expertise with a keen eye for design. My development journey has involved building high-quality applications from the ground up and mentoring junior developers to establish best practices.
                         </p>
                         <p>
-                            I specialize in translating complex designs from Figma into responsive, performant websites. Currently, my focus is on leveraging advanced React patterns and Next.js to engineer scalable, real-world solutions.
+                            I specialize in translating complex designs into responsive, performant, and accessible interfaces. Currently, my focus is on leveraging advanced React patterns and Next.js server components to engineer performant, scalable, real-world solutions at an enterprise level.
                         </p>
                         <p>
-                            I am open to collaborations, constructive feedback, and connecting with fellow developers. Let's build something exceptional together.
+                            I am open to collaborations, constructive professional discussions, and connecting with fellow engineers. Let's build something exceptional together.
                         </p>
                     </div>
                 </div>
@@ -117,6 +125,13 @@ export default function AboutPage() {
                 <div className="w-48 h-48 md:w-64 md:h-64 relative flex-shrink-0 order-1 md:order-2">
                     <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-chart-2/20 rounded-full blur-2xl" />
                     <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-background shadow-2xl">
+                        <Image
+                            src="/profile-bg.jpg"
+                            alt="Profile Background"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
                         <Image
                             src="/avatar.jpg"
                             alt="Kelvin Atsu Djayouri"
