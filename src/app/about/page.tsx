@@ -57,7 +57,7 @@ const skillsGroups = [
 
 const timelineData = [
     {
-        year: "2022 - Present",
+        year: "2020 - 2023",
         title: "Senior Frontend Engineer",
         company: "TechNova Solutions",
         description: "Architecting and building scalable frontend applications using Next.js and React. Leading a team of developers and mentoring juniors while establishing best practices across the organization.",
