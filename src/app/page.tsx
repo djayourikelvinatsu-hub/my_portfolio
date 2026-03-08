@@ -96,7 +96,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+      <section className="relative pt-24 pb-16 md:pt-48 md:pb-32 overflow-hidden">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
             <motion.div
@@ -109,7 +109,7 @@ export default function Home() {
                 <span className="text-primary font-mono text-sm tracking-widest uppercase">{"//"} SOFTWARE ENGINEER</span>
               </motion.div>
 
-              <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 leading-[1.1]">
+              <motion.h1 variants={fadeIn} className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter mb-6 leading-[1.1]">
                 Hi, I'm <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
                   Kelvin Atsu Djayouri
@@ -118,7 +118,7 @@ export default function Home() {
                 I build things for the web.
               </motion.h1>
 
-              <motion.p variants={fadeIn} className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed">
+              <motion.p variants={fadeIn} className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed">
                 A software engineer with 5 years of experience specializing in building exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products at scale.
               </motion.p>
 
@@ -138,7 +138,7 @@ export default function Home() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="relative w-64 h-64 md:w-80 md:h-80">
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-400/20 to-teal-500/20 blur-3xl" />
                 <div className="relative w-full h-full rounded-full border border-white/10 overflow-hidden bg-slate-900 flex items-center justify-center p-2">
                   <div className="w-full h-full rounded-full overflow-hidden relative">
@@ -158,7 +158,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-slate-900/50 border-y border-white/5">
+      <section className="py-16 sm:py-20 bg-slate-900/50 border-y border-white/5">
         <div className="container mx-auto px-4 md:px-8">
           <motion.div
             initial="hidden"
@@ -169,10 +169,10 @@ export default function Home() {
           >
             <motion.div variants={fadeIn} className="mb-12">
               <span className="text-primary font-mono text-sm tracking-widest uppercase">{"//"} ABOUT EXPERTISE</span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-4">What I bring to the table</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-4">What I bring to the table</h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { icon: Layers, title: "Architecture", desc: "Scalable, maintainable system design." },
                 { icon: Zap, title: "Performance", desc: "Optimized for speed and efficiency." },
@@ -194,9 +194,9 @@ export default function Home() {
       </section>
 
       {/* Experience & Skills Section */}
-      <section className="py-24">
+      <section className="py-16 sm:py-24">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -260,7 +260,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 bg-slate-900/30 border-t border-white/5">
+      <section id="projects" className="py-16 sm:py-24 bg-slate-900/30 border-t border-white/5">
         <div className="container mx-auto px-4 md:px-8">
           <motion.div
             initial="hidden"
@@ -269,9 +269,9 @@ export default function Home() {
             variants={staggerContainer}
             className="flex flex-col"
           >
-            <motion.div variants={fadeIn} className="mb-16">
+            <motion.div variants={fadeIn} className="mb-12 sm:mb-16">
               <span className="text-primary font-mono text-sm tracking-widest uppercase">{"//"} WORK</span>
-              <h2 className="text-4xl md:text-5xl font-bold mt-4">Selected Projects</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4">Selected Projects</h2>
             </motion.div>
 
             <div className="flex flex-col space-y-12">
@@ -279,7 +279,7 @@ export default function Home() {
                 <motion.div
                   key={i}
                   variants={fadeIn}
-                  className="group relative flex flex-col p-8 md:p-10 rounded-3xl bg-slate-900 border border-white/5 hover:border-white/10 transition-all overflow-hidden"
+                  className="group relative flex flex-col p-6 sm:p-8 md:p-10 rounded-3xl bg-slate-900 border border-white/5 hover:border-white/10 transition-all overflow-hidden"
                 >
                   {/* Background Glow */}
                   <div className="absolute top-0 right-0 p-32 bg-primary/5 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
@@ -287,9 +287,9 @@ export default function Home() {
                   <div className="relative z-10 flex flex-col h-full">
                     <span className="text-xs font-mono tracking-widest text-primary mb-4 uppercase">{project.label}</span>
                     <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
-                    <p className="text-muted-foreground max-w-2xl mb-8 leading-relaxed text-lg">{project.description}</p>
+                    <p className="text-muted-foreground max-w-2xl mb-8 leading-relaxed text-base sm:text-lg">{project.description}</p>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8 py-6 border-y border-white/5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 py-6 border-y border-white/5">
                       {project.stats.map((stat, j) => (
                         <div key={j} className="flex flex-col">
                           <span className="text-xs font-mono text-muted-foreground uppercase mb-1 tracking-wider">{stat.label}</span>
@@ -298,20 +298,20 @@ export default function Home() {
                       ))}
                     </div>
 
-                    <div className="flex flex-wrap items-center justify-between gap-6 mt-auto pt-4 border-t border-white/5">
+                    <div className="flex flex-wrap items-center justify-between gap-4 sm:gap-6 mt-auto pt-4 border-t border-white/5">
                       <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag, j) => (
                           <span key={j} className="px-3 py-1 text-xs font-mono bg-white/5 rounded-full border border-white/5">{tag}</span>
                         ))}
                       </div>
-                      <div className="flex gap-4">
-                        <Button asChild variant="outline" className="rounded-full px-6 font-mono text-xs tracking-widest uppercase border-white/10 hover:bg-white/5">
+                      <div className="flex flex-wrap gap-4 w-full sm:w-auto mt-2 sm:mt-0">
+                        <Button asChild variant="outline" className="w-full sm:w-auto rounded-full px-6 font-mono text-xs tracking-widest uppercase border-white/10 hover:bg-white/5">
                           <Link href={`/projects/${project.slug}`}>
                             Case Study <ArrowRight className="w-4 h-4 ml-2" />
                           </Link>
                         </Button>
-                        <Button asChild variant="ghost" className="rounded-full px-6 font-mono text-xs tracking-widest uppercase hover:bg-primary/10 hover:text-primary transition-colors">
-                          <a href={project.link} target="_blank" rel="noreferrer" className="flex items-center gap-2">
+                        <Button asChild variant="ghost" className="w-full sm:w-auto rounded-full px-6 font-mono text-xs tracking-widest uppercase hover:bg-primary/10 hover:text-primary transition-colors">
+                          <a href={project.link} target="_blank" rel="noreferrer" className="flex justify-center items-center gap-2">
                             View Live <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
                           </a>
                         </Button>
@@ -343,8 +343,8 @@ export default function Home() {
           >
             <motion.div variants={fadeIn} className="mb-8">
               <span className="text-primary font-mono text-sm tracking-widest uppercase">{"//"} LET'S TALK</span>
-              <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4">Work Together</h2>
-              <p className="text-muted-foreground text-lg">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-4">Work Together</h2>
+              <p className="text-muted-foreground text-base sm:text-lg">
                 I'm currently available for new opportunities. Send me a message and I'll get back to you soon.
               </p>
             </motion.div>

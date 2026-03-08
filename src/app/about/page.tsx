@@ -126,7 +126,7 @@ export default function AboutPage() {
             >
                 <motion.div variants={fadeIn} className="flex-1 order-2 md:order-1 flex flex-col">
                     <span className="text-primary font-mono text-sm tracking-widest uppercase mb-4 block md:inline-block">{"//"} THE DEVELOPER</span>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
                         Kelvin Atsu Djayouri
                     </h1>
 
@@ -143,7 +143,7 @@ export default function AboutPage() {
                     </div>
                 </motion.div>
 
-                <motion.div variants={fadeIn} className="w-64 h-64 md:w-80 md:h-80 relative flex-shrink-0 order-1 md:order-2">
+                <motion.div variants={fadeIn} className="w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 relative flex-shrink-0 order-1 md:order-2">
                     <div className="absolute inset-0 bg-gradient-to-tr from-cyan-400/20 to-teal-500/20 rounded-[40px] rotate-6 scale-105 blur-md" />
                     <div className="absolute inset-0 bg-slate-900 border border-white/10 rounded-[40px] -rotate-3 transition-transform hover:rotate-0 duration-500" />
                     <div className="relative w-full h-full rounded-[40px] overflow-hidden border border-white/10 shadow-2xl">
@@ -168,9 +168,9 @@ export default function AboutPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     {/* Experience Section */}
                     <div id="experience" className="scroll-mt-32">
-                        <motion.div variants={fadeIn} className="mb-12">
+                        <motion.div variants={fadeIn} className="mb-8 sm:mb-12">
                             <span className="text-primary font-mono text-sm tracking-widest uppercase">{"//"} CAREER</span>
-                            <h2 className="text-3xl font-bold mt-4">Professional Experience</h2>
+                            <h2 className="text-2xl sm:text-3xl font-bold mt-4">Professional Experience</h2>
                         </motion.div>
 
                         <div className="relative border-l border-white/10 ml-3 md:ml-6 space-y-12 pb-12">
@@ -187,7 +187,7 @@ export default function AboutPage() {
                                         </span>
                                     </div>
                                     <h4 className="text-muted-foreground font-mono text-sm uppercase tracking-wider mb-4">{item.company}</h4>
-                                    <p className="text-muted-foreground leading-relaxed mb-6 text-lg">{item.description}</p>
+                                    <p className="text-muted-foreground leading-relaxed mb-6 text-base sm:text-lg">{item.description}</p>
                                     <div className="flex flex-wrap gap-2 mt-4">
                                         {item.skills.map((skill) => (
                                             <span key={skill} className="px-3 py-1 text-xs font-mono tracking-widest uppercase rounded-full bg-slate-900 border border-white/10 text-muted-foreground">
@@ -202,9 +202,9 @@ export default function AboutPage() {
 
                     {/* Education Section */}
                     <div id="education" className="scroll-mt-32">
-                        <motion.div variants={fadeIn} className="mb-12">
+                        <motion.div variants={fadeIn} className="mb-8 sm:mb-12">
                             <span className="text-primary font-mono text-sm tracking-widest uppercase">{"//"} LEARNING</span>
-                            <h2 className="text-3xl font-bold mt-4">Education & Awards</h2>
+                            <h2 className="text-2xl sm:text-3xl font-bold mt-4">Education & Awards</h2>
                         </motion.div>
 
                         <div className="relative border-l border-white/10 ml-3 md:ml-6 space-y-12 pb-12">
@@ -221,7 +221,7 @@ export default function AboutPage() {
                                         </span>
                                     </div>
                                     <h4 className="text-muted-foreground font-mono text-sm uppercase tracking-wider mb-4">{item.company}</h4>
-                                    <p className="text-muted-foreground leading-relaxed mb-6 text-lg">{item.description}</p>
+                                    <p className="text-muted-foreground leading-relaxed mb-6 text-base sm:text-lg">{item.description}</p>
                                     <div className="flex flex-wrap gap-2 mt-4">
                                         {item.skills.map((skill) => (
                                             <span key={skill} className="px-3 py-1 text-xs font-mono tracking-widest uppercase rounded-full bg-slate-900 border border-white/10 text-muted-foreground">
@@ -244,12 +244,12 @@ export default function AboutPage() {
                 variants={staggerContainer}
                 className="pt-24 pb-12 border-t border-white/5"
             >
-                <div className="mb-16">
+                <div className="mb-12 sm:mb-16">
                     <span className="text-primary font-mono text-sm tracking-widest uppercase">{"//"} TECHNICAL ARSENAL</span>
-                    <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-6">
                         Skills & Technologies
                     </h2>
-                    <p className="text-muted-foreground max-w-2xl text-lg">
+                    <p className="text-muted-foreground max-w-2xl text-base sm:text-lg">
                         The tools I use every day to build scalable and high-performance applications.
                     </p>
                 </div>

@@ -63,7 +63,7 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
                     </Link>
                 </Button>
 
-                <header className="mb-16 rounded-[40px] bg-slate-900 border border-white/5 p-8 sm:p-12 md:p-16 relative overflow-hidden">
+                <header className="mb-12 sm:mb-16 rounded-[40px] bg-slate-900 border border-white/5 p-6 sm:p-12 md:p-16 relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
                     <div className="relative z-10 flex flex-col items-start gap-4">
@@ -71,11 +71,11 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
                             {"//"} {project.meta.role || "Case Study"}
                         </span>
 
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4 leading-[1.1] text-white">
+                        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4 leading-[1.1] text-white">
                             {project.meta.title}
                         </h1>
 
-                        <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-8">
+                        <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-6 sm:mb-8">
                             {project.meta.description}
                         </p>
 
@@ -87,14 +87,14 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
                             ))}
                         </div>
 
-                        <div className="flex flex-wrap items-center justify-between font-mono text-sm tracking-widest uppercase w-full gap-6">
+                        <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center justify-between font-mono text-sm tracking-widest uppercase w-full gap-4 sm:gap-6 mt-4 sm:mt-0">
                             <div className="flex items-center">
                                 <span className="text-muted-foreground mr-3">Role /</span>
                                 <span className="text-white">{project.meta.role}</span>
                             </div>
                             {project.meta.link && (
-                                <Button asChild variant="outline" className="rounded-full border-white/10 hover:bg-white/5 text-xs font-mono tracking-widest uppercase">
-                                    <a href={project.meta.link} target="_blank" rel="noreferrer" className="flex items-center gap-2">
+                                <Button asChild variant="outline" className="w-full sm:w-auto rounded-full border-white/10 hover:bg-white/5 text-xs font-mono tracking-widest uppercase mt-4 sm:mt-0">
+                                    <a href={project.meta.link} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2">
                                         View Live <ExternalLink className="h-4 w-4" />
                                     </a>
                                 </Button>
