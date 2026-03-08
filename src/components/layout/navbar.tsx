@@ -14,6 +14,8 @@ import { LocalTime } from "@/components/ui/local-time"
 const navItems = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
+    { name: "Experience", path: "/about#experience" },
+    { name: "Education", path: "/about#education" },
     { name: "Projects", path: "/projects" },
     { name: "Contact", path: "/#contact" },
 ]
