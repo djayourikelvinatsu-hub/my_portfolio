@@ -9,7 +9,6 @@ import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { LocalTime } from "@/components/ui/local-time"
 
 const navItems = [
     { name: "Home", path: "/" },
@@ -77,7 +76,6 @@ export function Navbar() {
                     ))}
 
                     <div className="flex items-center gap-4 ml-4 border-l border-white/10 pl-4">
-                        <LocalTime />
                         <Button
                             variant="ghost"
                             size="icon"
