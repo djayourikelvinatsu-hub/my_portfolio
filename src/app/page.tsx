@@ -235,24 +235,47 @@ export default function Home() {
                 <h2 className="text-3xl font-bold mt-4">Technical Proficiency</h2>
               </motion.div>
 
-              <div className="space-y-8">
-                {skills.map((skill, i) => (
-                  <motion.div key={i} variants={fadeIn}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-mono text-sm">{skill.name}</span>
-                      <span className="font-mono text-sm text-primary">{skill.progress}%</span>
-                    </div>
-                    <div className="h-2 w-full bg-slate-900 rounded-full overflow-hidden">
-                      <motion.div
-                        className="h-full bg-primary"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.progress}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.2 }}
-                      />
-                    </div>
-                  </motion.div>
-                ))}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+                {skills.map((skill, i) => {
+                  const radius = 54;
+                  const circumference = 2 * Math.PI * radius;
+                  const strokeDashoffset = circumference - (skill.progress / 100) * circumference;
+
+                  return (
+                    <motion.div key={i} variants={fadeIn} className="flex flex-col items-center">
+                      <div className="relative w-32 h-32 flex items-center justify-center">
+                        <svg className="absolute inset-0 w-full h-full transform -rotate-90">
+                          <circle
+                            cx="64"
+                            cy="64"
+                            r={radius}
+                            className="stroke-slate-800"
+                            strokeWidth="8"
+                            fill="transparent"
+                          />
+                          <motion.circle
+                            cx="64"
+                            cy="64"
+                            r={radius}
+                            className="stroke-primary drop-shadow-[0_0_8px_rgba(20,184,166,0.5)]"
+                            strokeWidth="8"
+                            fill="transparent"
+                            strokeDasharray={circumference}
+                            initial={{ strokeDashoffset: circumference }}
+                            whileInView={{ strokeDashoffset }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
+                            strokeLinecap="round"
+                          />
+                        </svg>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <span className="font-mono text-xl font-bold text-white shadow-black drop-shadow-md">{skill.progress}%</span>
+                        </div>
+                      </div>
+                      <span className="font-mono text-sm mt-6 text-center text-muted-foreground font-medium">{skill.name}</span>
+                    </motion.div>
+                  );
+                })}
               </div>
             </motion.div>
           </div>
