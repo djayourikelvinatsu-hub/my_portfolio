@@ -68,7 +68,7 @@ const experiences = [
   {
     role: "Senior Software Engineer",
     company: "Tech Solutions Inc.",
-    period: "2023 - Present",
+    period: "2021 - 2023",
     description: "Leading the development of scalable microservices, improving system performance by 40%, and mentoring junior developers.",
   },
   {
@@ -86,10 +86,10 @@ const experiences = [
 ]
 
 const skills = [
-  { name: "Frontend Development", progress: 95 },
-  { name: "Backend Development", progress: 90 },
-  { name: "Database Architecture", progress: 85 },
-  { name: "System Design", progress: 80 },
+  { name: "Frontend Development", progress: 95, languages: ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
+  { name: "Backend Development", progress: 90, languages: ["Node.js", "Express", "Python", "PHP"] },
+  { name: "Database Architecture", progress: 85, languages: ["PostgreSQL", "MongoDB", "Supabase", "Prisma"] },
+  { name: "System Design", progress: 80, languages: ["Microservices", "CI/CD", "AWS", "Docker"] },
 ]
 
 export default function Home() {
@@ -272,7 +272,16 @@ export default function Home() {
                           <span className="font-mono text-xl font-bold text-white shadow-black drop-shadow-md">{skill.progress}%</span>
                         </div>
                       </div>
-                      <span className="font-mono text-sm mt-6 text-center text-muted-foreground font-medium">{skill.name}</span>
+                      <div className="mt-6 flex flex-col items-center gap-3 w-full">
+                        <span className="font-mono text-sm text-center text-muted-foreground font-medium">{skill.name}</span>
+                        <div className="flex flex-wrap justify-center gap-1.5 w-full px-2">
+                          {skill.languages.map((lang, lIdx) => (
+                            <span key={lIdx} className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-white/70 font-mono whitespace-nowrap">
+                              {lang}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
                     </motion.div>
                   );
                 })}

@@ -238,11 +238,12 @@ export default function AboutPage() {
 
             {/* Skills Section */}
             <motion.div
+                id="skills"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
                 variants={staggerContainer}
-                className="pt-24 pb-12 border-t border-white/5"
+                className="pt-24 pb-12 border-t border-white/5 scroll-mt-32"
             >
                 <div className="mb-12 sm:mb-16">
                     <span className="text-primary font-mono text-sm tracking-widest uppercase">{"//"} TECHNICAL ARSENAL</span>
