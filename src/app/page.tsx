@@ -60,7 +60,7 @@ const projects = [
       { label: "Content", value: "MDX" },
     ],
     tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
-    link: "https://my-portfolio.vercel.app"
+    link: "https://kaddev.vercel.app/"
   }
 ]
 
