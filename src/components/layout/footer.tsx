@@ -7,7 +7,7 @@ export function Footer() {
         <footer className="border-t border-white/5 bg-slate-950/50 backdrop-blur-sm mt-auto">
             <div className="container mx-auto px-4 md:px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
                 <div className="flex flex-col items-center md:items-start">
-                    <p className="text-sm font-mono tracking-widest text-primary mb-2">{"//"} KAD_DEV</p>
+                    <p className="text-sm font-mono tracking-widest text-primary mb-2">{"//"} DEV_KAD</p>
                     <p className="text-sm font-semibold tracking-tight">© {new Date().getFullYear()} All rights reserved.</p>
                     <p className="text-xs text-muted-foreground mb-6 mt-1">Built with Next.js, Tailwind, & Framer Motion</p>
                     <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 py-1 text-xs font-mono tracking-wider uppercase">

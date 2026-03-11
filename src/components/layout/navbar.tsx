@@ -35,7 +35,7 @@ export function Navbar() {
             <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-8">
                 <Link href="/" className="flex items-center space-x-2 group">
                     <span className="text-primary font-mono font-bold text-xl group-hover:text-white transition-colors">{"//"}</span>
-                    <span className="font-bold inline-block font-mono tracking-wider text-lg">KAD</span>
+                    <span className="font-bold inline-block font-mono tracking-wider text-lg">DEV_KAD</span>
                 </Link>
 
                 {/* Desktop Nav */}
