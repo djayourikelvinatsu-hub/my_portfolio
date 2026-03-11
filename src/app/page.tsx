@@ -119,7 +119,7 @@ export default function Home() {
               </motion.h1>
 
               <motion.p variants={fadeIn} className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed">
-                A Senior Software Engineer with 5 years of experience specializing in building robust, performant systems and seamless user experiences. Currently, I'm focused on developing enterprise-level applications and leading scalable architecture initiatives.
+                A Senior Software Engineer with 4+ years of experience specializing in building robust, performant systems and seamless user experiences. Currently, I'm focused on developing enterprise-level applications and leading scalable architecture initiatives.
               </motion.p>
 
               <motion.div variants={fadeIn} className="flex flex-wrap gap-4">

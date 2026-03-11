@@ -132,7 +132,7 @@ export default function AboutPage() {
 
                     <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                         <p>
-                            A Software Engineer with 5 years of experience in architecting scalable applications and leading cross-functional teams, specializing in building robust backend systems and seamless user experiences.
+                            A Software Engineer with 4+ years of experience in architecting scalable applications and leading cross-functional teams, specializing in building robust backend systems and seamless user experiences.
                         </p>
                         <p>
                             With a strong foundation in modern web technologies, my approach combines technical depth across the stack with a keen eye for system architecture. My development journey has involved building high-quality enterprise applications from the ground up, scaling databases, and mentoring junior developers to establish CI/CD best practices.
