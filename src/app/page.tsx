@@ -115,11 +115,11 @@ export default function Home() {
                   Kelvin Atsu Djayouri
                 </span>
                 <br />
-                I build things for the web.
+                I architect and engineer scalable web solutions.
               </motion.h1>
 
               <motion.p variants={fadeIn} className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed">
-                A software engineer with 5 years of experience specializing in building exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products at scale.
+                A Senior Software Engineer with 5 years of experience specializing in building robust, performant systems and seamless user experiences. Currently, I'm focused on developing enterprise-level applications and leading scalable architecture initiatives.
               </motion.p>
 
               <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
