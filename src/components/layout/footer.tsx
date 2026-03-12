@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Github, Linkedin, Twitter, Mail, Phone } from "lucide-react"
-import { FaWhatsapp } from "react-icons/fa"
+import { FaWhatsapp, FaDev } from "react-icons/fa"
 
 export function Footer() {
     return (
@@ -50,6 +50,15 @@ export function Footer() {
                     >
                         <Twitter className="h-5 w-5" />
                         <span className="sr-only">Twitter</span>
+                    </a>
+                    <a
+                        href="https://dev.to/kaddev"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                        <FaDev className="h-5 w-5" />
+                        <span className="sr-only">Dev.to</span>
                     </a>
                 </div>
             </div>
