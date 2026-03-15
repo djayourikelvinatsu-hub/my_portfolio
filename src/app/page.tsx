@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight, Code2, Layers, Zap, MonitorSmartphone, Server, Database, Globe, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -97,8 +98,9 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-48 md:pb-32 overflow-hidden">
         <div className="container mx-auto px-4 md:px-8">
+          <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
             <motion.div
-              className="w-full flex flex-col items-center text-center"
+              className="w-full md:w-[60%] flex flex-col items-start"
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
@@ -116,11 +118,11 @@ export default function Home() {
                 I architect and engineer scalable web solutions.
               </motion.h1>
 
-              <motion.p variants={fadeIn} className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
+              <motion.p variants={fadeIn} className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed">
                 A Senior Software Engineer with 4+ years of experience specializing in building robust, performant systems and seamless user experiences. Currently, I'm focused on developing enterprise-level applications and leading scalable architecture initiatives.
               </motion.p>
 
-              <motion.div variants={fadeIn} className="flex flex-wrap justify-center gap-4">
+              <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="rounded-full px-8 text-sm font-mono tracking-widest uppercase">
                   <a href="#projects">View Projects</a>
                 </Button>
@@ -129,6 +131,29 @@ export default function Home() {
                 </Button>
               </motion.div>
             </motion.div>
+
+            <motion.div
+              className="w-full md:w-[40%] flex justify-center relative"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-400/20 to-teal-500/20 blur-3xl" />
+                <div className="relative w-full h-full rounded-full border border-white/10 overflow-hidden bg-slate-900 flex items-center justify-center p-2">
+                  <div className="w-full h-full rounded-full overflow-hidden relative">
+                    <Image
+                      src="/avatar.jpg"
+                      alt="Profile"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

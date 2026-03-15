@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { Calendar, Briefcase, Award } from "lucide-react"
 import {
     SiReact,
@@ -121,10 +122,10 @@ export default function AboutPage() {
                 initial="hidden"
                 animate="visible"
                 variants={staggerContainer}
-                className="mb-24 flex flex-col gap-12 md:gap-16 items-center"
+                className="mb-24 flex flex-col md:flex-row gap-12 md:gap-16 items-center md:items-start"
             >
-                <motion.div variants={fadeIn} className="w-full flex flex-col">
-                    <span className="text-primary font-mono text-sm tracking-widest uppercase mb-4 block">{"//"} THE DEVELOPER</span>
+                <motion.div variants={fadeIn} className="flex-1 order-2 md:order-1 flex flex-col">
+                    <span className="text-primary font-mono text-sm tracking-widest uppercase mb-4 block md:inline-block">{"//"} THE DEVELOPER</span>
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
                         Kelvin Atsu Djayouri
                     </h1>
@@ -139,6 +140,20 @@ export default function AboutPage() {
                         <p>
                             I specialize in engineering comprehensive solutions across the frontend and backend. Currently, my focus is on leveraging advanced React patterns, Next.js server components, distributed databases, and robust API design to deliver performant and scalable real-world solutions at an enterprise level.
                         </p>
+                    </div>
+                </motion.div>
+
+                <motion.div variants={fadeIn} className="w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 relative flex-shrink-0 order-1 md:order-2">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-cyan-400/20 to-teal-500/20 rounded-[40px] rotate-6 scale-105 blur-md" />
+                    <div className="absolute inset-0 bg-slate-900 border border-white/10 rounded-[40px] -rotate-3 transition-transform hover:rotate-0 duration-500" />
+                    <div className="relative w-full h-full rounded-[40px] overflow-hidden border border-white/10 shadow-2xl">
+                        <Image
+                            src="/avatar.jpg"
+                            alt="Kelvin Atsu Djayouri"
+                            fill
+                            className="object-cover object-top"
+                            priority
+                        />
                     </div>
                 </motion.div>
             </motion.div>
