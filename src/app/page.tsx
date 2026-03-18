@@ -61,6 +61,71 @@ const projects = [
     ],
     tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
     link: "https://kaddev.vercel.app/"
+  },
+  {
+    title: "Data Analytics Dashboard",
+    slug: "data-analytics-dashboard",
+    label: "FEATURED PROJECT",
+    description: "A comprehensive data visualization tool for enterprise businesses to track key performance metrics.",
+    stats: [
+      { label: "Role", value: "Lead frontend" },
+      { label: "Stack", value: "React" },
+      { label: "Data", value: "D3.js" },
+    ],
+    tags: ["React", "TypeScript", "D3.js", "Tailwind CSS"],
+    link: "https://data-analytics-dashboard-demo.vercel.app"
+  },
+  {
+    title: "NextGen E-Commerce",
+    slug: "nextgen-ecommerce",
+    label: "FEATURED PROJECT",
+    description: "A modern, headless e-commerce solution built for speed, scalability, and seamless user experiences.",
+    stats: [
+      { label: "Platform", value: "Web" },
+      { label: "Payments", value: "Stripe" },
+      { label: "Database", value: "PostgreSQL" },
+    ],
+    tags: ["Next.js", "Stripe", "PostgreSQL", "Prisma"],
+    link: "https://nextgen-ecommerce-demo.vercel.app"
+  },
+  {
+    title: "AI Resume Builder",
+    slug: "ai-resume-builder",
+    label: "FEATURED PROJECT",
+    description: "An AI-powered tool that helps job seekers create professional, ATS-friendly resumes in minutes.",
+    stats: [
+      { label: "AI", value: "OpenAI" },
+      { label: "Backend", value: "Node.js" },
+      { label: "Database", value: "MongoDB" },
+    ],
+    tags: ["React", "Node.js", "OpenAI API", "MongoDB"],
+    link: "https://ai-resume-builder-demo.vercel.app"
+  },
+  {
+    title: "Real Estate Explorer",
+    slug: "real-estate-explorer",
+    label: "FEATURED PROJECT",
+    description: "A platform for discovering and listing properties with advanced filtering and interactive maps.",
+    stats: [
+      { label: "Maps", value: "Mapbox" },
+      { label: "Frontend", value: "Next.js" },
+      { label: "Auth", value: "Firebase" },
+    ],
+    tags: ["Next.js", "Mapbox", "Tailwind CSS", "Firebase"],
+    link: "https://real-estate-explorer-demo.vercel.app"
+  },
+  {
+    title: "TaskFlow Manager",
+    slug: "task-flow",
+    label: "FEATURED PROJECT",
+    description: "A collaborative project management tool featuring Kanban boards and real-time updates.",
+    stats: [
+      { label: "Realtime", value: "Socket.io" },
+      { label: "State", value: "Redux" },
+      { label: "Backend", value: "Express" },
+    ],
+    tags: ["React", "Redux", "Express", "Socket.io"],
+    link: "https://task-flow-manager-demo.vercel.app"
   }
 ]
 
