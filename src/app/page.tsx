@@ -112,7 +112,7 @@ const projects = [
       { label: "Auth", value: "Firebase" },
     ],
     tags: ["Next.js", "Mapbox", "Tailwind CSS", "Firebase"],
-    link: "https://real-estate-explorer-demo.vercel.app"
+    link: "https://real-estate-k7l4.vercel.app/"
   },
   {
     title: "TaskFlow Manager",
