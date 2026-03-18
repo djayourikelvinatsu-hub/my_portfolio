@@ -21,7 +21,7 @@ export function getProjectBySlug(slug: string) {
 
     return {
         slug: realSlug,
-        meta: data as { title: string; date: string; description: string; role: string; stacks: string[]; link?: string },
+        meta: data as { title: string; date: string; description: string; role: string; stacks: string[]; link?: string; status?: "completed" | "in-progress" },
         content,
     };
 }
