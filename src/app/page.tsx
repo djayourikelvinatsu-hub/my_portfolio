@@ -105,7 +105,7 @@ const projects = [
     title: "Real Estate Explorer",
     slug: "real-estate-explorer",
     label: "FEATURED PROJECT",
-    description: "A platform for discovering and listing properties with advanced filtering and interactive maps.",
+    description: "An immersive real estate platform featuring interactive Mapbox integrations, advanced property filtering, and a seamless, high-performance user experience.",
     stats: [
       { label: "Maps", value: "Mapbox" },
       { label: "Frontend", value: "Next.js" },
