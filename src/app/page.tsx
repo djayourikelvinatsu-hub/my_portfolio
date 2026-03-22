@@ -37,6 +37,19 @@ const projects = [
     link: "https://campus-marketplace-umber.vercel.app"
   },
   {
+    title: "Bet Site (Beta)",
+    slug: "bet-site-beta",
+    label: "FEATURED PROJECT",
+    description: "A responsive betting-style web app with market browsing, clear odds presentation, and a polished UI—shipped as a beta on Vercel.",
+    stats: [
+      { label: "Deploy", value: "Vercel" },
+      { label: "Frontend", value: "Next.js" },
+      { label: "UI", value: "Tailwind" },
+    ],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    link: "https://bet-site-beta.vercel.app"
+  },
+  {
     title: "Meditrack Pro",
     slug: "meditrack-pro",
     label: "FEATURED PROJECT",
