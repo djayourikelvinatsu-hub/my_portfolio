@@ -37,10 +37,10 @@ const projects = [
     link: "https://campus-marketplace-umber.vercel.app"
   },
   {
-    title: "Bet Site (Beta)",
-    slug: "bet-site-beta",
+    title: "OddsHub",
+    slug: "odds-hub",
     label: "FEATURED PROJECT",
-    description: "A responsive betting-style web app with market browsing, clear odds presentation, and a polished UI—shipped as a beta on Vercel.",
+    description: "A responsive web app for browsing sports-style markets, clear odds presentation, and fast navigation—built with Next.js and deployed on Vercel.",
     stats: [
       { label: "Deploy", value: "Vercel" },
       { label: "Frontend", value: "Next.js" },
